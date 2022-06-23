@@ -1,0 +1,19 @@
+{
+  "name": "trucker-trekkers",
+  "version": "1.0.0",
+  "description": "MERN Application",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "watch": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "willjduncan",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
