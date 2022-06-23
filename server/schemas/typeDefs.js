@@ -9,6 +9,10 @@ const typeDefs = gql`
     position: String
     clients: [Client]
   }
+  type Auth {
+    token: ID!
+    user: User!
+  }
 
   type Client {
     _id: ID!
@@ -32,7 +36,19 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User!
     getUsers: [User]!
+  }
+
+  type Mutation {
+    register(
+      username: String!
+      email: String!
+      position: String!
+      password: String!
+      confirmPassword: String!
+    ): Auth!
+    login(email: String!, password: String!): Auth!
   }
 `;
 
