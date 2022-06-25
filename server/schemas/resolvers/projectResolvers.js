@@ -15,7 +15,7 @@ module.exports = {
         });
       }
 
-      const projects = await Project.find().populate("driver");
+      const projects = await Project.find().populate("driver").populate('client');
 
       if (!projects) {
         throw new UserInputError("Errors", {
@@ -33,7 +33,7 @@ module.exports = {
         });
       }
 
-      const project = await Project.findOne({ jobName }).populate("driver");
+      const project = await Project.findOne({ jobName }).populate("driver").populate('client');
 
       if (!project) {
         throw new UserInputError("Errors", {

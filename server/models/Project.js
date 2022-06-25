@@ -20,6 +20,7 @@ const projectSchema = new Schema({
   startTime: {
     type: Date,
     default: Date.now,
+    get: (startTimeVal) => formatDate(startTimeVal)
   },
   pickUpAddress: {
     type: String,

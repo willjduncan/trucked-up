@@ -29,6 +29,7 @@ const typeDefs = gql`
     pickUpAddress: String
     deliveryAddress: String
     createdAt: String
+    client: Client
   }
 
   # type Driver {
