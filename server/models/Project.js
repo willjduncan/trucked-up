@@ -1,9 +1,11 @@
 const { Schema, model } = require("mongoose");
+const formatDate = require("../utils/formatData")
 
 const projectSchema = new Schema({
   jobName: {
     type: String,
     required: true,
+    unique: true
   },
   description: {
     type: String,
@@ -11,13 +13,13 @@ const projectSchema = new Schema({
   },
   driver: [
     {
-      type: String,
-      require: true,
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     },
   ],
   startTime: {
     type: Date,
-    default: () => Date.now(),
+    default: Date.now,
   },
   pickUpAddress: {
     type: String,
@@ -25,9 +27,14 @@ const projectSchema = new Schema({
   deliveryAddress: {
     type: String,
   },
+  client: {
+    type: Schema.Types.ObjectId,
+    ref: "Client"
+  },
   createdAt: {
     type: Date,
-    default: () => Date.now(),
+    default: Date.now,
+    get: (createdAtVal) => formatDate(createdAtVal)
   },
 });
 

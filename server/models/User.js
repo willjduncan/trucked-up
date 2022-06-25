@@ -26,10 +26,10 @@ const userSchema = new Schema(
       enum: ["dispatcher", "driver"],
       default: "driver",
     },
-    clients: [
+    projects: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Client",
+        ref: "Project",
       },
     ],
   },

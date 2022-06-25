@@ -19,10 +19,10 @@ module.exports = {
       }
       const userData = await User.findOne({ _id: context.user._id })
         .select("-__v -password")
-        .populate("clients")
+        .populate("projects")
         .populate({
-          path: "clients",
-          populate: "projects",
+          path: "projects",
+          populate: "driver",
         });
 
       return userData;
@@ -33,7 +33,10 @@ module.exports = {
           errors: { auth: "Not an authorized user" },
         });
       }
-      const users = await User.find();
+      const users = await User.find().populate("projects").populate({
+        path: "projects",
+        populate: "driver",
+      });
 
       if (!users) {
         throw new UserInputError("Errors", {
@@ -43,6 +46,21 @@ module.exports = {
 
       return users;
     },
+    getUser: async(parant, {email}, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Errors", {
+          errors: { auth: "Not an authorized user" },
+        });
+      }
+      const user = await User.findOne({email});
+      if (!user) {
+        throw new UserInputError("Errors", {
+          errors: { user: "User not in this DB!" },
+        });
+      }
+
+      return user;
+    }
   },
   Mutation: {
     // Create new user
