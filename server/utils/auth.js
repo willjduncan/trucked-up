@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 const expiration = '8h';
 
 module.exports = {
-  signToken: function({ username, email, _id }) {
-    const payload = { username, email, _id };
+  signToken: function({ username, email, _id, position }) {
+    const payload = { username, email, _id, position };
 
     return jwt.sign({ data: payload }, process.env.JWT_SECRET, { expiresIn: expiration });
   },

@@ -7,7 +7,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  console.log(Auth.getProfile());
+  const userdata = Auth.getProfile();
 
   return (
     <header className="header">
@@ -18,7 +18,7 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-              {Auth.getProfile() ? (
+              {(userdata.data.position === "dispatcher") ? (
                 <>
                   <Link to="/drivers">Drivers</Link>
                 </>
