@@ -7,9 +7,9 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     username: "",
     email: "",
-    position: "",
+    position: "driver",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
   const [register, { error }] = useMutation(ADD_USER);
 
@@ -21,7 +21,6 @@ const Signup = () => {
       ...formState,
       [name]: value,
     });
-    
   };
   // submit form (notice the async!)
   const handleFormSubmit = async (event) => {
@@ -29,7 +28,7 @@ const Signup = () => {
 
     // use try/catch instead of promises to handle errors
     try {
-      console.error(formState);
+      
       const { data } = await register({
         variables: { ...formState },
       });
@@ -65,15 +64,17 @@ const Signup = () => {
                 value={formState.email}
                 onChange={handleChange}
               />
-              <input
-                className="form-input"
-                placeholder="Your position"
+              <select
                 name="position"
                 type="position"
+                className="form-input"
                 id="position"
                 value={formState.position}
                 onChange={handleChange}
-              />
+              >
+                <option >driver</option>
+                <option >dispatcher</option>
+              </select>
               <input
                 className="form-input"
                 placeholder="******"
