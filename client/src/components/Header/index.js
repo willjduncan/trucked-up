@@ -20,7 +20,7 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-              {(userdata().data.position === "driver") ? (
+              {(userdata().data.position === "dispatcher") ? (
                 <>
                   <Link to="/drivers">Drivers</Link>
                 </>
