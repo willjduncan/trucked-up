@@ -14,7 +14,6 @@ import NoMatch from "./pages/NoMatch";
 import SingleThought from "./pages/SingleThought";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
-
 import Home from "./pages/Home";
 
 const httpLink = createHttpLink({
