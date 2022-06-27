@@ -7,6 +7,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  console.log(Auth.getProfile());
 
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
@@ -18,7 +19,15 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
+              {Auth.getProfile() ? (
+                <>
+                  <Link to="/drivers">Drivers</Link>
+                </>
+              ) : (
+                <></>
+              )}
+              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/profile">Profile</Link>
               <a href="/" onClick={logout}>
                 Logout
               </a>
