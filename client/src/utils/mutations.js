@@ -8,7 +8,7 @@ export const ADD_USER = gql`
     $password: String!
     $confirmPassword: String!
   ) {
-    addUser(
+    register(
       username: $username
       email: $email
       position: $position
@@ -62,7 +62,7 @@ export const ADD_CLIENT = gql`
 `;
 
 export const ADD_PROJECT = gql`
-  mutation addProject(driverEmail: String!, clientName: String!, jobName: String!, description: String!, pickUpAddress: String!, deliveryAddress: String!) {
+  mutation addProject($driverEmail: String!, $clientName: String!, $jobName: String!, $description: String!, $pickUpAddress: String!, $deliveryAddress: String!) {
     addProject(driverEmail: $driverEmail, clientName: $clientName, jobName: $jobName, description: $description, pickUpAddress: $pickUpAddress, deliveryAddress: $deliveryAddress) {
       _id
       jobName
