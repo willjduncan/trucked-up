@@ -1,0 +1,22 @@
+/* VARIABLES */
+:root {
+    --primary-color: #141414;
+    --secondary-color: #F55F14;
+    --tertiary-color: #F9F9F9;
+    --fourth-color: #727D71;
+    --fifth-color: #778DA9;
+  }
+  /* UNIVERSAL SELECTOR */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    color: var(--tertiary-color);
+    font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
