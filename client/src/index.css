@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 body {
-  color: var(--tertiary-color);
+  color: var(--primary-color);
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,18 +29,16 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 3px 3px 3px var(--secondary-color);
+  /* box-shadow: 3px 3px 3px var(--primary-color); */
   top: 0;
   z-index: 9999;
 }
-.header h1{
-  /* font-weight: bold; */
-  /* font-size: 68px; */
-  /* font-family: Georgia, "Times New Roman", Times, serif; */
+header h1{
+
   border-radius: 10px 10px 10px;
   padding: 10px;
   margin: 0 0 0 1em;
-  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+  text-shadow: 0 0 10px rgba(0, 0, 0, .6);
 }
 .header a {
   text-decoration: none;
@@ -60,8 +58,8 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .header ul a:hover {
-  background: var(--primary-color);
-  color: var(--secondary-color);
+  background: var(--secondary-color);
+  color: var(--tertiary-color);
   border-radius: 15px;
   text-shadow: none;
 }
@@ -77,7 +75,6 @@ header {
   background-position: 0% 80%;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
   min-height: 600px;
 }
 
@@ -112,6 +109,55 @@ header {
 .home-text:hover {
   background-color: rgb(114, 125, 113, 0.5);
 }
+
+/* ADD JOB STYLES */
+.contact-container {
+    margin: 0 27% 0 27%;
+    padding: 10px 40px 40px 40px;
+  }
+  
+  #addJobForm {
+    align-self: center;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    margin: 0 auto 0 auto;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: rgb(46, 64, 87, 0.5);
+  }
+  #addJobForm input,
+  #addJobForm textarea {
+    border: 1px solid var(--secondary-color);
+    display: block;
+    padding: 6px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+  }
+  #addJobForm input:focus,
+  .addJobForm textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+  }
+  #addJobForm button {
+    width: 20%;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px 0;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  #addJobForm button:hover {
+    color: var(--secondary-color);
+    background: var(--tertiary-color);
+  }
 
 /* FOOTER STYLES */
 .footer {
