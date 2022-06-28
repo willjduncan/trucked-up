@@ -19,6 +19,7 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
+<<<<<<< HEAD
               {Auth.getProfile() ? (
                 <>
                   <Link to="/drivers">Drivers</Link>
@@ -26,6 +27,8 @@ const Header = () => {
               ) : (
                 <></>
               )}
+=======
+>>>>>>> c469ca18 (resolve differences)
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/profile">Profile</Link>
               <a href="/" onClick={logout}>

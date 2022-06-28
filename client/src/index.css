@@ -19,4 +19,54 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
+/* HOME STYLES */
+.home-cont {
+    background-image: url("../public/images/home-img.jpg");
+    background-position: 0% 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    min-height: 600px;
+}
+
+.home-title {
+    color: var(--tertiary-color);
+    padding: 60px 0px;
+    width: 80%;
+    font-size: 3rem;
+    margin-right: 5%;
+    margin-left: auto;
+    text-align: right;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+  }
+
+  .home-text {
+    color: var(--tertiary-color);
+    padding: 30px 20px 20px 30px;
+    width: 50%;
+    font-size: 1.7rem;
+    margin-right: 5%;
+    margin-left: auto;
+    text-align: right;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+    line-height: 1.5;
+    background-color: rgb(20, 20, 20, .5);
+    border-radius: 18px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+  }
+  .home-text:hover {
+    background-color: rgb(114, 125, 113, .5);
+  }
+
+  /* FOOTER STYLES */
+  .footer {
+    border-top: solid 1px var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    font-size: 10px;
+    /* background-color: var(--fourth-color); */
+  }
