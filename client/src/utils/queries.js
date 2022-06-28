@@ -5,13 +5,13 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      email
       # CHECK if need more user data!
-      # email
       # password
-      # position
-      # projects {
+      position
+      projects {
       #   _id
-      #   jobName
+        jobName
       #   description
       #   driver: [User]
       #   startTime
@@ -19,7 +19,7 @@ export const QUERY_ME = gql`
       #   deliveryAddress
       #   createdAt
       #   client: Client
-      # }
+      }
     }
   }
 `;
@@ -32,7 +32,7 @@ export const QUERY_USERS = gql`
       # CHECK if need more user data!
       # email
       # password
-      # position
+      position
       # projects {
       #   _id
       #   jobName
@@ -49,7 +49,7 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_USER = gql`
-  query getUser(email: String!) {
+  query getUser($email: String!) {
     getUser(email: $email) {
       _id
       username
@@ -57,9 +57,9 @@ export const QUERY_USER = gql`
       # email
       # password
       # position
-      # projects {
+      projects {
       #   _id
-      #   jobName
+        jobName
       #   description
       #   driver: [User]
       #   startTime
@@ -67,7 +67,7 @@ export const QUERY_USER = gql`
       #   deliveryAddress
       #   createdAt
       #   client: Client
-      # }
+      }
     }
   }
 `;
@@ -97,7 +97,7 @@ export const QUERY_CLIENTS = gql`
 `;
 
 export const QUERY_CLIENT = gql`
-  query getClient(name: String!){
+  query getClient($name: String!){
     getClients(name: $name) {
       _id
       username
@@ -132,17 +132,17 @@ export const QUERY_PROJECTS = gql`
         # email
         # password
         # position
-        # projects {
+        projects {
         #   _id
-        #   jobName
+          jobName
         #   description
         #   driver: {[User]}
         #   startTime
         #   pickUpAddress
         #   deliveryAddress
         #   createdAt
-        #   client: {Client}
-        # }
+        #   client
+        }
       }
       # startTime
       # pickUpAddress
@@ -158,7 +158,7 @@ export const QUERY_PROJECTS = gql`
 `;
 
 export const QUERY_PROJECT = gql`
-  query getProject(jobName: String!) {
+  query getProject($jobName: String!) {
     getProject {
       _id
       jobName

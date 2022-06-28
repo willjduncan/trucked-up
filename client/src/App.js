@@ -12,9 +12,10 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 // import SingleThought from "./pages/SingleThought";
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
+import Dashboard from "./pages/dashboard";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,11 +47,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              {/* <Route path="/profile">
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/profile">
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
-              <Route path="/thought/:id" element={<SingleThought />} />
+              {/* <Route path="/thought/:id" element={<SingleThought />} />
               <Route path="*" element={<NoMatch />} /> */}
             </Routes>
           </div>
