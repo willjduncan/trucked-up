@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
+import AddJobForm from "./pages/AddJob";
 // import SingleThought from "./pages/SingleThought";
 // import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
@@ -46,12 +47,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              {/* <Route path="/profile">
-                <Route path=":username" element={<Profile />} />
+              <Route path="/add" element={<AddJobForm />} />
+              {/* <Route path="/profile"> */}
+                {/* <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
-              <Route path="/thought/:id" element={<SingleThought />} />
-              <Route path="*" element={<NoMatch />} /> */}
+              <Route path="/thought/:id" element={<SingleThought />} /> */}
+              <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
           <Footer />
