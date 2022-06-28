@@ -1,0 +1,200 @@
+/* VARIABLES */
+:root {
+  --primary-color: #141414;
+  --secondary-color: #f55f14;
+  --tertiary-color: #f9f9f9;
+  --fourth-color: #727d71;
+  --fifth-color: #778da9;
+}
+/* UNIVERSAL SELECTOR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+<<<<<<< HEAD
+  color: var(--tertiary-color);
+=======
+  color: var(--primary-color);
+>>>>>>> feature/add-job
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADER STYLES START */
+header {
+  padding: 20px 35px;
+  background-color: var(--tertiary-color);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+<<<<<<< HEAD
+  box-shadow: 3px 3px 3px var(--secondary-color);
+  top: 0;
+  z-index: 9999;
+}
+.header h1{
+  /* font-weight: bold; */
+  /* font-size: 68px; */
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  border-radius: 10px 10px 10px;
+  padding: 10px;
+  margin: 0 0 0 1em;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+=======
+  /* box-shadow: 3px 3px 3px var(--primary-color); */
+  top: 0;
+  z-index: 9999;
+}
+header h1{
+
+  border-radius: 10px 10px 10px;
+  padding: 10px;
+  margin: 0 0 0 1em;
+  text-shadow: 0 0 10px rgba(0, 0, 0, .6);
+>>>>>>> feature/add-job
+}
+.header a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.header ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+.header ul a {
+  padding: 10px 15px;
+  font-weight: 400;
+  font-size: 1.7vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.header ul a:hover {
+<<<<<<< HEAD
+  background: var(--primary-color);
+  color: var(--secondary-color);
+=======
+  background: var(--secondary-color);
+  color: var(--tertiary-color);
+>>>>>>> feature/add-job
+  border-radius: 15px;
+  text-shadow: none;
+}
+.navActive {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 15px;
+}
+
+/* HOME STYLES */
+.home-cont {
+  background-image: url("../public/images/home-img.jpg");
+  background-position: 0% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+<<<<<<< HEAD
+  /* background-attachment: fixed; */
+=======
+>>>>>>> feature/add-job
+  min-height: 600px;
+}
+
+.home-title {
+  color: var(--tertiary-color);
+  padding: 60px 0px;
+  width: 80%;
+  font-size: 3rem;
+  margin-right: 5%;
+  margin-left: auto;
+  text-align: right;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+}
+
+.home-text {
+  color: var(--tertiary-color);
+  padding: 30px 20px 20px 30px;
+  width: 50%;
+  font-size: 1.7rem;
+  margin-right: 5%;
+  margin-left: auto;
+  text-align: right;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+  line-height: 1.5;
+  background-color: rgb(20, 20, 20, 0.5);
+  border-radius: 18px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+.home-text:hover {
+  background-color: rgb(114, 125, 113, 0.5);
+}
+
+<<<<<<< HEAD
+=======
+/* ADD JOB STYLES */
+.contact-container {
+    margin: 0 27% 0 27%;
+    padding: 10px 40px 40px 40px;
+  }
+  
+  #addJobForm {
+    align-self: center;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    margin: 0 auto 0 auto;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: rgb(46, 64, 87, 0.5);
+  }
+  #addJobForm input,
+  #addJobForm textarea {
+    border: 1px solid var(--secondary-color);
+    display: block;
+    padding: 6px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+  }
+  #addJobForm input:focus,
+  .addJobForm textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+  }
+  #addJobForm button {
+    width: 20%;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px 0;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  #addJobForm button:hover {
+    color: var(--secondary-color);
+    background: var(--tertiary-color);
+  }
+
+>>>>>>> feature/add-job
+/* FOOTER STYLES */
+.footer {
+  border-top: solid 1px var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px;
+  font-size: 10px;
+  /* background-color: var(--fourth-color); */
+}

@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
-//FIX DB NAME
 mongoose
-  .connect(process.env.MONGODB_URI || MONGODB_URI, {
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/trucked-up', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
