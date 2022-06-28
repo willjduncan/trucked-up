@@ -17,6 +17,7 @@ const Header = () => {
         <h1>Truck It Up!</h1>
       </Link>
 
+<<<<<<< HEAD
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
@@ -41,6 +42,24 @@ const Header = () => {
           )}
         </nav>
       
+=======
+      <nav className="text-center">
+        {Auth.loggedIn() ? (
+          <ul>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile">Profile</Link>
+            <a href="/" onClick={logout}>
+              Logout
+            </a>
+          </ul>
+        ) : (
+          <ul>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </ul>
+        )}
+      </nav>
+>>>>>>> e9b767048bd4b6c0d78171abd0b6d9640a6e3d15
     </header>
   );
 };
