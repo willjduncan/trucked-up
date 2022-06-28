@@ -10,25 +10,13 @@ const Header = () => {
   console.log(Auth.getProfile());
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <h1>Truck It Up!</h1>
-        </Link>
-
+  <header className="header">
+      <Link to="/">
+        <h1>Truck It Up!</h1>
+      </Link>
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-<<<<<<< HEAD
-              {Auth.getProfile() ? (
-                <>
-                  <Link to="/drivers">Drivers</Link>
-                </>
-              ) : (
-                <></>
-              )}
-=======
->>>>>>> c469ca18 (resolve differences)
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/profile">Profile</Link>
               <a href="/" onClick={logout}>
@@ -42,7 +30,6 @@ const Header = () => {
             </>
           )}
         </nav>
-      </div>
     </header>
   );
 };
