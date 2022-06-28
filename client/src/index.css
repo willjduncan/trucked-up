@@ -13,11 +13,7 @@
   box-sizing: border-box;
 }
 body {
-<<<<<<< HEAD
-  color: var(--tertiary-color);
-=======
   color: var(--primary-color);
->>>>>>> feature/add-job
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,20 +29,6 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-<<<<<<< HEAD
-  box-shadow: 3px 3px 3px var(--secondary-color);
-  top: 0;
-  z-index: 9999;
-}
-.header h1{
-  /* font-weight: bold; */
-  /* font-size: 68px; */
-  /* font-family: Georgia, "Times New Roman", Times, serif; */
-  border-radius: 10px 10px 10px;
-  padding: 10px;
-  margin: 0 0 0 1em;
-  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
-=======
   /* box-shadow: 3px 3px 3px var(--primary-color); */
   top: 0;
   z-index: 9999;
@@ -57,7 +39,6 @@ header h1{
   padding: 10px;
   margin: 0 0 0 1em;
   text-shadow: 0 0 10px rgba(0, 0, 0, .6);
->>>>>>> feature/add-job
 }
 .header a {
   text-decoration: none;
@@ -77,13 +58,8 @@ header h1{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .header ul a:hover {
-<<<<<<< HEAD
-  background: var(--primary-color);
-  color: var(--secondary-color);
-=======
   background: var(--secondary-color);
   color: var(--tertiary-color);
->>>>>>> feature/add-job
   border-radius: 15px;
   text-shadow: none;
 }
@@ -99,10 +75,6 @@ header h1{
   background-position: 0% 80%;
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
-  /* background-attachment: fixed; */
-=======
->>>>>>> feature/add-job
   min-height: 600px;
 }
 
@@ -138,8 +110,6 @@ header h1{
   background-color: rgb(114, 125, 113, 0.5);
 }
 
-<<<<<<< HEAD
-=======
 /* ADD JOB STYLES */
 .contact-container {
     margin: 0 27% 0 27%;
@@ -189,7 +159,6 @@ header h1{
     background: var(--tertiary-color);
   }
 
->>>>>>> feature/add-job
 /* FOOTER STYLES */
 .footer {
   border-top: solid 1px var(--primary-color);

@@ -15,6 +15,7 @@ const Dashboard = () => {
 // }
 const projects = data?.getProjects || [];
 console.log(projects);
+
 const loggedIn = Auth.loggedIn();
 
   return (
