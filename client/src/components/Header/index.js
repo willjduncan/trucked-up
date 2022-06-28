@@ -7,6 +7,9 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  function userdata () {
+    return Auth.getProfile();
+  }
 
   return (
     <header className="header">
