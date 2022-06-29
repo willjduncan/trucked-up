@@ -158,6 +158,26 @@ header h1 {
   background: var(--tertiary-color);
 }
 
+  /* MAP STYLES */
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+  }
+  #instructions {
+    position: absolute;
+    margin: 20px;
+    width: 20%;
+    top: 0;
+    bottom: 20%;
+    height: 250px;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: scroll;
+    font-family: sans-serif;
+  }
+
 /* FOOTER STYLES */
 .footer {
   border-top: solid 1px var(--primary-color);
