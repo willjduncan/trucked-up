@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_PROJECTS } from "../utils/queries";
 import Auth from "../utils/auth";
+import DriverMap from "../components/DriverMap"
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
@@ -20,6 +21,7 @@ const loggedIn = Auth.loggedIn();
 
   return (
     <main>
+      <DriverMap />
       <div className="flex-row justify-space-between">
         {/* {loggedIn && (
           <div className="col-12 mb-3">
