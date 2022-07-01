@@ -14,11 +14,11 @@ class MapCoord {
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
-            let lat = data.locations[0].referencePosition.latitude;
-            let long = data.locations[0].referencePosition.longitude;
-            let coord = [long, lat];
-            console.log(coord);
-            return coord;
+            // let lat = data.locations[0].referencePosition.latitude;
+            // let long = data.locations[0].referencePosition.longitude;
+            // let coord = [long, lat];
+            // console.log(coord);
+            return data;
             // getSecondCoordinate(coord, address2);
           });
         }

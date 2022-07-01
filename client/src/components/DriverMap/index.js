@@ -1,23 +1,17 @@
-import React from "react";
+import React, {useRef, useState, useEffect} from "react";
 import Map, { Marker, Source, Layer } from "react-map-gl";
+// import mapboxgl from '!mapbox-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapCoord from "../../utils/maps"
 // import ReactDOM from 'react-dom';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 const MAPBOX_TOKEN =
 "pk.eyJ1Ijoid2lsbGpkdW5jYW4iLCJhIjoiY2wxcnZ0bDAxMGxxZTNvcXEzdTdxZzU3ZiJ9.2K211Cg3BG3AL1k-knpdAA";
+const coordAPIKey = "MjkxNGVjYzM2YjhjNGFkMzg3Yzk5ZDQ2M2Q2MzZjMzE6NzY5OGZhNmYtMDM0MS00YmMyLTk2ZGItMjczMjgwOWIwNWU0";
 
-let pickup = [35.1868198, -80.8242883];
-let deliver = [35.218383, -80.8019038];
+let pickup = "3408 Woodleaf Rd, Charlotte NC 28205";
+let deliver = "1518 Providence Rd, Charlotte NC 28207";
 
-
-const geojson = {
-  type: "FeatureCollection",
-  features: [
-    { type: "Feature", geometry: { type: "Point", coordinates: pickup } },
-    { type: "Feature", geometry: { type: "Point", coordinates: deliver } },
-  ],
-};
 
 const layerStyle = {
   id: "point",
@@ -29,17 +23,66 @@ const layerStyle = {
 };
 
 function DriverMap() {
-
-  function convert (address) {
-    return MapCoord.getCoord(address);
-  }
-
-
-
-
-
+  
+  const [pickupLat, setPickupLat] = useState(null);
+  const [pickupLong, setPickupLong] = useState(null);
+  const [deliverLat, setDeliverLat] = useState(null);
+  const [deliverLong, setDeliverLong] = useState(null);
   const [viewport, setViewport] = React.useState();
-  return (
+  const [done1, setDone1] = useState(false)
+  const [done2, setDone2] = useState(false)
+  const [lng, setLng] = useState(-70.9);
+  const [lat, setLat] = useState(42.35);
+  
+  const geojson = {
+    type: "FeatureCollection",
+    features: [
+      { type: "Feature", geometry: { type: "Point", coordinates: [{pickupLat},{pickupLong}] } },
+      { type: "Feature", geometry: { type: "Point", coordinates:  [{deliverLat},{deliverLong}]} },
+    ],
+  };
+  
+  useEffect(() => {
+    async function fetchData() {
+    let coordinatesUrl =
+  "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=" +
+  pickup +
+  "&apiKey=" +
+  coordAPIKey;
+    const response = await fetch(coordinatesUrl);
+    const data = await response.json();
+    const latCoord = data.locations[0].referencePosition.latitude;
+    const longCoord = data.locations[0].referencePosition.longitude;
+    setPickupLat(parseFloat(latCoord));
+    setPickupLong(parseFloat(longCoord));
+    setLat(parseFloat(latCoord));
+    setLng(parseFloat(longCoord));
+    }
+    setDone1(true);
+    fetchData()
+  },[])
+
+  useEffect(() => {
+    async function fetchData() {
+    let coordinatesUrl =
+  "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=" +
+  deliver +
+  "&apiKey=" +
+  coordAPIKey;
+    const response = await fetch(coordinatesUrl);
+    const data = await response.json();
+    const latCoord = data.locations[0].referencePosition.latitude;
+    const longCoord = data.locations[0].referencePosition.longitude;
+    setDeliverLat(parseFloat(latCoord));
+    setDeliverLong(parseFloat(longCoord));
+    setDone2(true);
+    }
+    fetchData()
+  },[])
+
+
+
+    if(done1 && done2) {return (
     <div>
       <div> Pickup: <span id="pickup">1518 Providence Rd, Charlotte NC 28204</span></div>
     <CopyToClipboard text="1518 Providence Rd, Charlotte NC 28204">
@@ -49,11 +92,11 @@ function DriverMap() {
       <CopyToClipboard text="3408 Woodleaf Rd, Charlotte NC 28205">
     <button>Copy to clipboard</button>
   </CopyToClipboard>
-  <p>{convert('3408 Woodleaf Rd, Charlotte NC 28205')}</p>
     <Map
       initialViewState={{
-        longitude: pickup[1],
-        latitude: pickup[0],
+        longitude: lng,
+        latitude: lat,
+        center: [lng,lat],
         zoom: 10,
       }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
@@ -63,11 +106,12 @@ function DriverMap() {
       <Source id="my-data" type="geojson" data={geojson}>
         <Layer {...layerStyle} />
       </Source>
-      <Marker longitude={pickup[1]} latitude={pickup[0]} color="green" />
-      <Marker longitude={deliver[1]} latitude={deliver[0]} color="blue" />
+      <Marker longitude={pickupLong} latitude={pickupLat} color="green" />
+      <Marker longitude={deliverLong} latitude={deliverLat} color="blue" />
     </Map>
     </div>
   );
+}
 }
 
 export default DriverMap;
