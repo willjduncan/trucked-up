@@ -1,10 +1,10 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import Map, { Marker, Source, Layer } from "react-map-gl";
-// import mapboxgl from '!mapbox-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
-import MapCoord from "../../utils/maps"
-// import ReactDOM from 'react-dom';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+// import { Link } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const MAPBOX_TOKEN =
 "pk.eyJ1Ijoid2lsbGpkdW5jYW4iLCJhIjoiY2wxcnZ0bDAxMGxxZTNvcXEzdTdxZzU3ZiJ9.2K211Cg3BG3AL1k-knpdAA";
 const coordAPIKey = "MjkxNGVjYzM2YjhjNGFkMzg3Yzk5ZDQ2M2Q2MzZjMzE6NzY5OGZhNmYtMDM0MS00YmMyLTk2ZGItMjczMjgwOWIwNWU0";
@@ -23,16 +23,18 @@ const layerStyle = {
 };
 
 function DriverMap() {
-  
+  let mapLink = "https://www.google.com/maps/dir/" + pickup + "/" + deliver;
   const [pickupLat, setPickupLat] = useState(null);
   const [pickupLong, setPickupLong] = useState(null);
   const [deliverLat, setDeliverLat] = useState(null);
   const [deliverLong, setDeliverLong] = useState(null);
-  const [viewport, setViewport] = React.useState();
+  // const [viewport, setViewport] = React.useState();
   const [done1, setDone1] = useState(false)
   const [done2, setDone2] = useState(false)
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
+  // const [link,setLink] = useState(mapLink)
+  
   
   const geojson = {
     type: "FeatureCollection",
@@ -83,15 +85,24 @@ function DriverMap() {
 
 
     if(done1 && done2) {return (
-    <div>
-      <div> Pickup: <span id="pickup">1518 Providence Rd, Charlotte NC 28204</span></div>
+    <div className="map-containter">
+      <div className="address-container">
+      <div className="add"> Pickup (in blue): <span id="pickup">1518 Providence Rd, Charlotte NC 28204</span></div>
     <CopyToClipboard text="1518 Providence Rd, Charlotte NC 28204">
-    <button>Copy to clipboard</button>
+    <button className="button">Copy to clipboard</button>
   </CopyToClipboard>
-      <div> Deliver To: <span id="deliver">3408 Woodleaf Rd, Charlotte NC 28205</span></div>
+      <div className="add"> Deliver To (in green): <span id="deliver">3408 Woodleaf Rd, Charlotte NC 28205</span></div>
       <CopyToClipboard text="3408 Woodleaf Rd, Charlotte NC 28205">
-    <button>Copy to clipboard</button>
+    <button className="button">Copy to clipboard</button>
   </CopyToClipboard>
+      </div>
+  {/* <Routes>
+  <Route path='/privacy-policy' component={() => { 
+     window.location.replace = {link} 
+     return null;
+}}/>
+  </Routes> */}
+  {/* <Link to='/privacy-policy'>Find Route on Google Maps</Link> */}
     <Map
       initialViewState={{
         longitude: lng,
@@ -100,7 +111,7 @@ function DriverMap() {
         zoom: 10,
       }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
-      style={{width: 800, height: 600}}
+      style={{width: 750, height: 600, marginLeft: 20}}
       mapboxAccessToken={MAPBOX_TOKEN}
     >
       <Source id="my-data" type="geojson" data={geojson}>
