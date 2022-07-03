@@ -5,10 +5,6 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 // import { Link } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const MAPBOX_TOKEN =
-"pk.eyJ1Ijoid2lsbGpkdW5jYW4iLCJhIjoiY2wxcnZ0bDAxMGxxZTNvcXEzdTdxZzU3ZiJ9.2K211Cg3BG3AL1k-knpdAA";
-const coordAPIKey = "MjkxNGVjYzM2YjhjNGFkMzg3Yzk5ZDQ2M2Q2MzZjMzE6NzY5OGZhNmYtMDM0MS00YmMyLTk2ZGItMjczMjgwOWIwNWU0";
-
 let pickup = "3408 Woodleaf Rd, Charlotte NC 28205";
 let deliver = "1518 Providence Rd, Charlotte NC 28207";
 
@@ -28,7 +24,7 @@ function DriverMap() {
   const [pickupLong, setPickupLong] = useState(null);
   const [deliverLat, setDeliverLat] = useState(null);
   const [deliverLong, setDeliverLong] = useState(null);
-  // const [viewport, setViewport] = React.useState();
+  const [viewport, setViewport] = React.useState();
   const [done1, setDone1] = useState(false)
   const [done2, setDone2] = useState(false)
   const [lng, setLng] = useState(-70.9);
@@ -47,10 +43,7 @@ function DriverMap() {
   useEffect(() => {
     async function fetchData() {
     let coordinatesUrl =
-  "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=" +
-  pickup +
-  "&apiKey=" +
-  coordAPIKey;
+  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${pickup}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     const latCoord = data.locations[0].referencePosition.latitude;
@@ -66,11 +59,8 @@ function DriverMap() {
 
   useEffect(() => {
     async function fetchData() {
-    let coordinatesUrl =
-  "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=" +
-  deliver +
-  "&apiKey=" +
-  coordAPIKey;
+      let coordinatesUrl =
+      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${deliver}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     const latCoord = data.locations[0].referencePosition.latitude;
@@ -112,7 +102,7 @@ function DriverMap() {
       }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       style={{width: 750, height: 600, marginLeft: 20}}
-      mapboxAccessToken={MAPBOX_TOKEN}
+      mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
       <Source id="my-data" type="geojson" data={geojson}>
         <Layer {...layerStyle} />
