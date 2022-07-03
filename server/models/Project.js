@@ -32,6 +32,14 @@ const projectSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Client"
   },
+  confirmed: {
+    type: Boolean,
+    default: false
+  },
+  completed: {
+    type: Boolean,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now,

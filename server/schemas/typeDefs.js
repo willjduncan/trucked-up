@@ -30,6 +30,8 @@ const typeDefs = gql`
     deliveryAddress: String
     createdAt: String
     client: Client
+    completed: Boolean
+    confirmed: Boolean
   }
 
   # type Driver {
