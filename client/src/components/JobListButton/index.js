@@ -23,12 +23,17 @@ const JobList = ({ projects }) => {
               </Link>{" "}
               project on {project.createdAt}
             </p>
+            { project.confirmed ? (
+            <button className="button">Confirm Job</button>
+          ) : (
+            <button className="button"> Mark Job as Complete</button>
+          )}
             <div className="card-body">
               <Link to={`/project/${project._id}`}>
                 <p>{project.description}</p>
               </Link>
             </div>
-            
+
           </div>
         ))}
     </div>
