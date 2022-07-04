@@ -22,7 +22,7 @@ const Signup = () => {
       [name]: value,
     });
   };
-  console.error(formState);
+
   // submit form (notice the async!)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
