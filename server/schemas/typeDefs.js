@@ -40,12 +40,17 @@ const typeDefs = gql`
 
   type Query {
     me: User!
+    meComplete: User!
+    meIncomplete: User!
     getUsers: [User]!
     getUser(email: String!): User!
     getClients: [Client]!
     getClient(name: String!): Client!
     getProjects: [Project]!
     getProject(jobName: String!): Project!
+    # getUserProjectsNotComplete()
+    # getUserProjectsComplete()
+
   }
 
   type Mutation {
@@ -60,6 +65,8 @@ const typeDefs = gql`
     addClient(name: String!): Client!
     addProject(driverEmail: String!, clientName: String!, jobName: String!, description: String!, pickUpAddress: String!, deliveryAddress: String!): Project!
     deleteProject(jobName: String!): Project
+    editComplete(_id: ID): Project
+    editConfirm(_id: ID): Project
   }
 `;
 

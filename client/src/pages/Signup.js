@@ -15,28 +15,6 @@ const Signup = () => {
 
   const [errors, setErrors] = useState({});
 
-  //console.error(formState);
-  // submit form (notice the async!)
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    // use try/catch instead of promises to handle errors
-    try {
-      console.log("Before Querry");
-      const data = await register({
-        variables: { ...formState },
-      });
-
-      if (data.errors) {
-        setErrors(data.errors[0].extensions.errors);
-      }
-
-      Auth.login(data.data.register.token);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -45,6 +23,23 @@ const Signup = () => {
       ...formState,
       [name]: value,
     });
+  };
+
+  // submit form (notice the async!)
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // use try/catch instead of promises to handle errors
+    try {
+      
+      const { data } = await register({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.register.token);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
