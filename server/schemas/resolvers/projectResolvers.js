@@ -15,7 +15,9 @@ module.exports = {
         });
       }
 
-      const projects = await Project.find().populate("driver").populate('client');
+      const projects = await Project.find()
+        .populate("driver")
+        .populate("client");
 
       if (!projects) {
         throw new UserInputError("Errors", {
@@ -33,7 +35,9 @@ module.exports = {
         });
       }
 
-      const project = await Project.findOne({ jobName }).populate("driver").populate('client');
+      const project = await Project.findOne({ jobName })
+        .populate("driver")
+        .populate("client");
 
       if (!project) {
         throw new UserInputError("Errors", {
@@ -87,7 +91,7 @@ module.exports = {
 
       // Verify project name does not exist
       const foundProject = await Project.find({ jobName });
-      
+
       if (foundProject.length) {
         throw new UserInputError("Errors", {
           errors: { project: "This project already exists." },
@@ -128,15 +132,15 @@ module.exports = {
       const project = await Project.deleteOne({ jobName });
       return project;
     },
-    editComplete: async (parent, {_id }, context) => {
-     const foundProject = await Project.find({ _id: project._id });
-      await foundProject.update({completed: true});
+    editComplete: async (parent, { _id }, context) => {
+      const foundProject = await Project.find({ _id });
+      await foundProject.update({ completed: true });
       return foundProject;
-  },
-  editConfirm: async (parent, {_id }, context) => {
-    const foundProject = await Project.find({ _id: project._id });
-     await foundProject.update({confirmed: true});
-     return foundProject;
- },
+    },
+    editConfirm: async (parent, { _id }, context) => {
+      const foundProject = await Project.find({ _id });
+      await foundProject.update({ confirmed: true });
+      return foundProject;
+    },
   },
 };
