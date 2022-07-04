@@ -102,11 +102,7 @@ const DriverMap = ({ project }) => {
       }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       style={{width: 750, height: 600, marginLeft: 20}}
-<<<<<<< HEAD
       mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-=======
-      mapboxAccessToken={MAPBOX_TOKEN}
->>>>>>> 71ecc21d (rebase correctly this time)
     >
       <Source id="my-data" type="geojson" data={geojson}>
         <Layer {...layerStyle} />
