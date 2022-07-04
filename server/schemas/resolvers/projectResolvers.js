@@ -128,5 +128,15 @@ module.exports = {
       const project = await Project.deleteOne({ jobName });
       return project;
     },
+    addComplete: async (parent, {_id }, context) => {
+     const foundProject = await Project.find({ _id: project._id });
+      await foundProject.update({completed: true});
+      return foundProject;
+  },
+  addConfirm: async (parent, {_id }, context) => {
+    const foundProject = await Project.find({ _id: project._id });
+     await foundProject.update({confirmed: true});
+     return foundProject;
+ },
   },
 };
