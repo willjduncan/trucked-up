@@ -96,3 +96,21 @@ export const ADD_PROJECT = gql`
     }
   }
 `;
+
+export const EDIT_CONFIRM = gql`
+  mutation editConfirm($_id: _id!) {
+    editComplete(name: $name) {
+      _id
+      name
+    }
+  }
+`;
+
+export const EDIT_COMPLETE = gql`
+  mutation editComplete($_id: _id!) {
+    editComplete(name: $name) {
+      _id
+      name
+    }
+  }
+`;
