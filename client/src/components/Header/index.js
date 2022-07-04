@@ -25,7 +25,9 @@ const Header = () => {
                   <Link to="/drivers">Drivers</Link>
                 </>
               ) : (
-                <></>
+                <>
+                <Link to="/completed_drives">Completed Drives</Link>
+                </>
               )}
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/profile">Profile</Link>
