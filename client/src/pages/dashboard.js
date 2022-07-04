@@ -138,6 +138,7 @@ const Dashboard = () => {
           >
             CONFIRM
           </button>
+          <DriverMap project={projects}/>
         </div>
       </div>
       {/* </div> */}
