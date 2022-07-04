@@ -21,8 +21,53 @@ Trucking app for creating and delegating jobs by Dispatchers to various truckers
 
 
 ## Description
+AS A dispatcher of many trucks,
+
+I WANT to assign available truckers jobs.
+
+SO THAT drivers understand their work assignment.
 
 
+AS A trucker,
+
+I WANT to view my assigned jobs in one location
+
+SO THAT I can plan my next trip. 
+
+Truck It Up is an app for trucking companies made to better organize information and communication from client to dispatcher to driver. When dispatchers sign in, they can keep track of incomplete jobs, confirmed jobs, completed jobs, and clients. They can also create jobs, and assign them to drivers. Drivers can sign on and accept the job and the confirm completion of the task. They can also view a map of the addresses. 
+
+Completed, the program should operate such that:
+
+WHEN I go to the repository
+
+THEN I find that it meets quality coding standards and has a high-quality README
+
+WHEN I look at the files on GitHub, 
+
+THEN I see that React was used on the front end, GraphQL, Node.js, Express.js make up the server, and MongoDB and the Mongoose ODM were used for the database. 
+
+WHEN I visit the website for the first time,
+
+THEN I see that it is deployed to Heroku 
+
+WHEN I click on the site, 
+
+THEN I find that it is responsive and interactive (i.e., accept and respond to user input) with a polished UI.
+
+WHEN I look at how the map the handles data,
+
+THEN I see that authentication is used and sensitive API key information is protected.
+
+WHEN I interact with elements,
+
+THEN I can do things such as retrieving, adding, updating, and deleting data.
+
+Work was divided in the following ways:
+
+Matt: backend, models, schema
+Will: wireframe, home, driver pages
+Sergii: login & signin, dispatcher pages
+Rafael: client pages 
 
 
 
@@ -60,7 +105,7 @@ Screenshots of the ....
 
 ## Credits
 
-The coding boot camp Professional README Guide found at https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide was used as a template for this README. The license was picked from [https://choosealicense.com/](https://choosealicense.com/).The WHEN/THEN section of this README was based off the project assignment Acceptance Criteria. Most influence was taken from Just-Tech-News of Modules 13 and 14. Stack Overflow, MDN Web Docs, W3, and Google were critical to our success. The website icon was created by BZZRINCANTATION and downloaded from Flaticon.
+The coding boot camp Professional README Guide found at https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide was used as a template for this README. The license was picked from [https://choosealicense.com/](https://choosealicense.com/).The WHEN/THEN section of this README was based off the project assignment Acceptance Criteria. Stack Overflow, MDN Web Docs, W3, and Google were critical to our success. The website icon was created by BZZRINCANTATION and downloaded from Flaticon. The home page image was taken by Pexels from Pixabay.
 
 
 
@@ -77,8 +122,7 @@ If you make changes, test it locally on a branch before pushing to main. Clone f
 
 ## Additions
 
-First, refactoring is always welcome. When filling out forms, adding further catches to make sure the information we get is accurate and up to form would improve user experience and the database. Examples include having a dropdown for states if the gem location is in the USA, adding an ability to add other activities besides simply labeling "other," turning missing required fields red if the user submits an unfinished gem, making sure downloaded pictures have suitable dimensions, adding alt text for the uploaded photos, and adding an "are you sure?" modal when the delete gem button is clicked. 
-Some of the bigger improvements to be made include the following:
+First, refactoring is always welcome. 
 
 
 
@@ -93,7 +137,7 @@ No Jest tests written were made for this project, but GraphQL is a critical tool
 
 The github repository to this project is below:
 
-[a](a)
+[https://github.com/willjduncan/trucked-up.git](https://github.com/willjduncan/trucked-up.git)
 
 
 The application is deployed on Heroku. The site is below:
@@ -125,7 +169,7 @@ Github: [https://github.com/willjduncan](https://github.com/willjduncan)
         
 MIT License
 
-Copyright (c) [2022] [willjduncan]
+Copyright (c) [2022]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
