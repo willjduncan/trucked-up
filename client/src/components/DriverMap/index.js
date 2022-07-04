@@ -5,8 +5,8 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 // import { Link } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-let pickup = "3408 Woodleaf Rd, Charlotte NC 28205";
-let deliver = "1518 Providence Rd, Charlotte NC 28207";
+// let pickup = "3408 Woodleaf Rd, Charlotte NC 28205";
+// let deliver = "1518 Providence Rd, Charlotte NC 28207";
 
 
 const layerStyle = {
@@ -18,7 +18,7 @@ const layerStyle = {
   },
 };
 
-function DriverMap() {
+const DriverMap = ({ project }) => {
   // let mapLink = "https://www.google.com/maps/dir/" + pickup + "/" + deliver;
   const [pickupLat, setPickupLat] = useState(null);
   const [pickupLong, setPickupLong] = useState(null);
@@ -43,7 +43,7 @@ function DriverMap() {
   useEffect(() => {
     async function fetchData() {
     let coordinatesUrl =
-  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${pickup}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
+  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     const latCoord = data.locations[0].referencePosition.latitude;
@@ -60,7 +60,7 @@ function DriverMap() {
   useEffect(() => {
     async function fetchData() {
       let coordinatesUrl =
-      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${deliver}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
+      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.deliveryAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     const latCoord = data.locations[0].referencePosition.latitude;
