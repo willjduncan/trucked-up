@@ -9,9 +9,10 @@ const Dashboard = () => {
   // use useQuery hook to make query request
   const { loading, data } = useQuery(QUERY_PROJECTS);
 
-  const projects = data?.getProjects || [];
-  console.log(projects);
-  const loggedIn = Auth.loggedIn();
+const projects = data?.getProjects || [];
+console.log(projects);
+
+const loggedIn = Auth.loggedIn();
 
   return (
     <main>

@@ -11,7 +11,31 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-  const [register, { error }] = useMutation(ADD_USER);
+  const [register, { error }] = useMutation(ADD_USER, { errorPolicy: "all" });
+
+  const [errors, setErrors] = useState({});
+
+  //console.error(formState);
+  // submit form (notice the async!)
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // use try/catch instead of promises to handle errors
+    try {
+      console.log("Before Querry");
+      const data = await register({
+        variables: { ...formState },
+      });
+
+      if (data.errors) {
+        setErrors(data.errors[0].extensions.errors);
+      }
+
+      Auth.login(data.data.register.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -21,23 +45,6 @@ const Signup = () => {
       ...formState,
       [name]: value,
     });
-  };
-
-  // submit form (notice the async!)
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    // use try/catch instead of promises to handle errors
-    try {
-      
-      const { data } = await register({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.register.token);
-    } catch (e) {
-      console.error(e);
-    }
   };
 
   return (
@@ -73,8 +80,8 @@ const Signup = () => {
                 value={formState.position}
                 onChange={handleChange}
               >
-                <option >driver</option>
-                <option >dispatcher</option>
+                <option>driver</option>
+                <option>dispatcher</option>
               </select>
               <input
                 className="form-input"
@@ -99,6 +106,15 @@ const Signup = () => {
               </button>
             </form>
             {error && <div>Sign up failed</div>}
+            {Object.keys(errors).length > 0 && (
+              <div className="h-75px text-[#991111] text-xl mt-8 text-center">
+                <ul className="">
+                  {Object.values(errors).map((value) => (
+                    <li key={value}>{value}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
