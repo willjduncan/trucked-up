@@ -24,7 +24,7 @@ const Dashboard = () => {
   //
   const projects = data?.getProjects || [];
   const project = data?.me?.projects || [];
-
+  console.log(projects);
   return (
     <main>
       <div className="flex-row justify-space-between">
@@ -34,6 +34,20 @@ const Dashboard = () => {
           ) : (
             // if user is driver - render project
             <>
+              <table id="job-list"> 
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Client name</th>
+                    <th>Project name</th>
+                    <th>Start Time</th>
+                    <th>Driver</th>
+                    <th>Pickup address</th>
+                    <th>Delivery address</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
               {userdata() === "driver" ? (
                 <>
                   <JobList
@@ -49,6 +63,9 @@ const Dashboard = () => {
                   />
                 </>
               )}
+                
+              </table>
+
             </>
           )}
         </div>

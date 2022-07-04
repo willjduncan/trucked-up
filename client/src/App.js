@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import AddJobForm from "./pages/AddJob";
-import Profile from "./pages/Profile";
+// import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
@@ -48,10 +48,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/profile">
+              {/* <Route path="/profile">
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
-              </Route>
+              </Route> */}
               <Route path="/add" element={<AddJobForm />} />
               <Route path="*" element={<NoMatch />} /> */
             </Routes>

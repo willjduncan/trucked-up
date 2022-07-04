@@ -144,15 +144,17 @@ export const QUERY_PROJECTS = gql`
         #   client
         }
       }
-      # startTime
-      # pickUpAddress
-      # deliveryAddress
+      startTime
+      pickUpAddress
+      deliveryAddress
       # createdAt
       client {
         _id
         name
       #   projects {}
       }
+      completed
+      confirmed
     }
   }
 `;
