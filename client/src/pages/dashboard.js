@@ -34,7 +34,7 @@ const Dashboard = () => {
           ) : (
             // if user is driver - render project
             <>
-              <table id="job-list"> 
+              <table id="job-list">
                 <thead>
                   <tr>
                     <th>Status</th>
@@ -47,25 +47,23 @@ const Dashboard = () => {
                     <th>Description</th>
                   </tr>
                 </thead>
-                
-              {userdata() === "driver" ? (
-                <>
-                  <JobList
-                    projects={project}
-                    title="Some Feed for today's Job(s)..."
-                  />
-                </>
-              ) : (
-                <>
-                  <JobList
-                    projects={projects}
-                    title="Some Feed for today's Job(s)..."
-                  />
-                </>
-              )}
-                
-              </table>
 
+                {userdata() === "driver" ? (
+                  <>
+                    <JobList
+                      projects={project}
+                      title="Some Feed for today's Job(s)..."
+                    />
+                  </>
+                ) : (
+                  <>
+                    <JobList
+                      projects={projects}
+                      title="Some Feed for today's Job(s)..."
+                    />
+                  </>
+                )}
+              </table>
             </>
           )}
         </div>
