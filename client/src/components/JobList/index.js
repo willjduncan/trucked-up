@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const JobList = ({ projects }) => {
   if (!projects.length) {
-    return <h3>No projects Yet</h3>;
+    return <tbody><tr><td>No projects Yet</td></tr></tbody>;
   }
 
   return (
