@@ -25,7 +25,6 @@ const Dashboard = () => {
   //
   const projects = data?.getProjects || [];
   const project = data?.me?.projects || [];
-  console.log(projects);
   return (
     <main>
       <DriverMap />
