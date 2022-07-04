@@ -23,6 +23,49 @@ export const QUERY_ME = gql`
     }
   }
 `;
+export const QUERY_ME_COMPLETE = gql`
+  {
+    me {
+      _id
+      username
+      position
+      projects {
+      #   _id
+      jobName
+        description
+        startTime
+        pickUpAddress
+        deliveryAddress
+        createdAt
+        client: Client
+        completed
+        confirmed
+      }
+    }
+  }
+`;
+
+export const QUERY_ME_INCOMPLETE = gql`
+  {
+    me {
+      _id
+      username
+      position
+      projects {
+      #   _id
+        jobName
+        description
+        startTime
+        pickUpAddress
+        deliveryAddress
+        createdAt
+        client: Client
+        completed
+        confirmed
+      }
+    }
+  }
+`;
 
 export const QUERY_USERS = gql`
   {

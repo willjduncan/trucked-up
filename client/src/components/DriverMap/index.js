@@ -19,12 +19,12 @@ const layerStyle = {
 };
 
 function DriverMap() {
-  let mapLink = "https://www.google.com/maps/dir/" + pickup + "/" + deliver;
+  // let mapLink = "https://www.google.com/maps/dir/" + pickup + "/" + deliver;
   const [pickupLat, setPickupLat] = useState(null);
   const [pickupLong, setPickupLong] = useState(null);
   const [deliverLat, setDeliverLat] = useState(null);
   const [deliverLong, setDeliverLong] = useState(null);
-  const [viewport, setViewport] = React.useState();
+  // const [viewport, setViewport] = React.useState();
   const [done1, setDone1] = useState(false)
   const [done2, setDone2] = useState(false)
   const [lng, setLng] = useState(-70.9);

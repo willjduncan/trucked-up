@@ -40,12 +40,17 @@ const typeDefs = gql`
 
   type Query {
     me: User!
+    meComplete: User!
+    meIncomplete: User!
     getUsers: [User]!
     getUser(email: String!): User!
     getClients: [Client]!
     getClient(name: String!): Client!
     getProjects: [Project]!
     getProject(jobName: String!): Project!
+    # getUserProjectsNotComplete()
+    # getUserProjectsComplete()
+
   }
 
   type Mutation {
