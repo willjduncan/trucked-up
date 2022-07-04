@@ -18,6 +18,7 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
+import SingleJob from "./pages/SingleJob";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,14 +52,10 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/completed_drives" element={<CompletedDrives />} />
-<<<<<<< HEAD
               {/* <Route path="/profile" element={<Profile />}> */}
-=======
-              <Route path="/profile">
-                <Route path=":username" element={<Profile />} />
-                <Route path="" element={<Profile />} />
+              <Route path="/project">
+              <Route path=":jobName" element={<SingleJob />} />
               </Route>
->>>>>>> 677ce5e8 (continuing rebase)
               <Route path="/add" element={<AddJobForm />} />
               <Route path="*" element={<NoMatch />} /> */
             </Routes>
