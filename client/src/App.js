@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import AddJobForm from "./pages/AddJob";
+import CompletedDrives from "./pages/CompletedDrives";
 // import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
