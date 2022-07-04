@@ -39,15 +39,16 @@ const DriverMap = ({ project }) => {
       { type: "Feature", geometry: { type: "Point", coordinates:  [{deliverLat},{deliverLong}]} },
     ],
   };
-  
+  console.log(project);
   useEffect(() => {
     async function fetchData() {
     let coordinatesUrl =
   `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
-    const latCoord = data.locations[0].referencePosition.latitude;
-    const longCoord = data.locations[0].referencePosition.longitude;
+    console.log(data);
+    const latCoord = data.locations[0]?.referencePosition.latitude;
+    const longCoord = data.locations[0]?.referencePosition.longitude;
     setPickupLat(parseFloat(latCoord));
     setPickupLong(parseFloat(longCoord));
     setLat(parseFloat(latCoord));
@@ -63,14 +64,14 @@ const DriverMap = ({ project }) => {
       `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.deliveryAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
-    const latCoord = data.locations[0].referencePosition.latitude;
-    const longCoord = data.locations[0].referencePosition.longitude;
+    const latCoord = data.locations[0]?.referencePosition.latitude;
+    const longCoord = data.locations[0]?.referencePosition.longitude;
     setDeliverLat(parseFloat(latCoord));
     setDeliverLong(parseFloat(longCoord));
     setDone2(true);
     }
     fetchData()
-  },[])
+  },[deliverLong])
 
 
 
