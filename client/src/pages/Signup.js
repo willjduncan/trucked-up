@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: "",
@@ -12,36 +11,34 @@ const Signup = () => {
     confirmPassword: "",
   });
   const [register, { error }] = useMutation(ADD_USER, { errorPolicy: "all" });
-
   const [errors, setErrors] = useState({});
-
+  //console.error(formState);
+  // submit form (notice the async!)
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    // use try/catch instead of promises to handle errors
+    try {
+      console.log("Before Querry");
+      const data = await register({
+        variables: { ...formState },
+      });
+      console.log(data)
+      if (data.errors) {
+        setErrors(data.errors[0].extensions.errors);
+      }
+      Auth.login(data.data.register.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
-  // submit form (notice the async!)
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    // use try/catch instead of promises to handle errors
-    try {
-      
-      const { data } = await register({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.register.token);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
@@ -116,5 +113,4 @@ const Signup = () => {
     </main>
   );
 };
-
 export default Signup;
