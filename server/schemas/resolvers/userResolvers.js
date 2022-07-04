@@ -27,6 +27,36 @@ module.exports = {
 
       return userData;
     },
+    meComplete: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Errors", {
+          errors: { auth: "Not an authorized user" },
+        });
+      }
+      const userData = await User.findOne({ _id: context.user._id })
+        .select("-__v -password")
+        .populate({
+          path:"projects",
+          match: { completed: true },
+        })
+
+      return userData;
+    },
+    meIncomplete: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Errors", {
+          errors: { auth: "Not an authorized user" },
+        });
+      }
+      const userData = await User.findOne({ _id: context.user._id })
+        .select("-__v -password")
+        .populate({
+          path:"projects",
+          match: { completed: false },
+        })
+
+      return userData;
+    },
     getUsers: async (parent, args, context) => {
       if (!context.user) {
         throw new AuthenticationError("Errors", {
