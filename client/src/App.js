@@ -12,8 +12,17 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import AddJobForm from "./pages/AddJob";
+<<<<<<< HEAD
 import CompletedDrives from "./pages/CompletedDrives";
 import Profile from "./pages/Profile";
+=======
+<<<<<<< HEAD
+// import Profile from "./pages/Profile";
+=======
+import CompletedDrives from "./pages/CompletedDrives";
+import Profile from "./pages/Profile";
+>>>>>>> 8887299d (begin completed drives page)
+>>>>>>> 8f882304 (rebasing)
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
