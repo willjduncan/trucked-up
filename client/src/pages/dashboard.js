@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import JobList from "../components/JobList";
 import { useQuery } from "@apollo/client";
 import { QUERY_PROJECTS } from "../utils/queries";
@@ -10,12 +10,24 @@ import Auth from "../utils/auth";
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
-  const [editConfirm] = useMutation(EDIT_CONFIRM, {
-    errorPolicy: "all",
-  });
-  const [editComplete] = useMutation(EDIT_COMPLETE, {
-    errorPolicy: "all",
-  });
+  const [jobtatus, setJobtatus] = useState("");
+  const buttonHandler = () => {
+    if (jobtatus === { name: "CONFIRM", confirmed: true }) {
+      setJobtatus({ name: "COMPLETED", complited: true });
+      console.log("COMPLETED!!");
+      console.log(jobtatus);
+    } else if (jobtatus === "") {
+      setJobtatus({ name: "CONFIRM", confirmed: true });
+      console.log("CONFIRMED!!");
+      console.log(jobtatus);
+      document.getElementById("confirm-complete-btn").innerText = "COMPLETE!";
+    } else {
+      console.log(jobtatus);
+      console.log(typeof jobtatus);
+    }
+  };
+  console.log(jobtatus);
+
   const loggedIn = Auth.loggedIn();
 
   //check token to see if user dispatcher or driver
@@ -27,10 +39,7 @@ const Dashboard = () => {
   // by default QUERY will be for all project
   let req = QUERY_PROJECTS;
   // if user is driver req will be changed to QUERY_ME
-
-  // by default Not show button for change job status
   let displayBtn = "none";
-  // if user is driver show button and change query name
   if (userdata() === "driver") {
     req = QUERY_ME;
     displayBtn = "";
@@ -82,43 +91,54 @@ const Dashboard = () => {
       {/* <DriverMap /> */}
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
-          {loading ? (
-            <tbody>
+          <table id="job-list">
+            <thead>
               <tr>
-                <td>Loading...</td>
+                <th>Status</th>
+                <th>Client name</th>
+                <th>Project name</th>
+                <th>Start Time</th>
+                <th>Driver</th>
+                <th>Pickup address</th>
+                <th>Delivery address</th>
+                <th>Description</th>
               </tr>
-            </tbody>
-          ) : (
-            // if user is driver - render project
-            <>
-              {userdata() === "driver" ? (
-                <>
-                  <JobList
-                    projects={project.filter(
-                      (project) => project.completed === false
-                    )}
-                    title="Some Feed for today's Job(s)..."
-                  />
-                </>
-              ) : (
-                <>
-                  <JobList
-                    projects={projects}
-                    title="Some Feed for today's Job(s)..."
-                  />
-                </>
-              )}
-            </>
-          )}
-        </table>
-
-        <button
-          id="confirm-complete-btn"
-          style={{ display: displayBtn }}
-          onClick={buttonHandler}
-        >
-          CHANGE JOB STATUS
-        </button>
+            </thead>
+            {loading ? (
+              <tbody>
+                <tr>
+                  <td>Loading...</td>
+                </tr>
+              </tbody>
+            ) : (
+              // if user is driver - render project
+              <>
+                {userdata() === "driver" ? (
+                  <>
+                    <JobList
+                      projects={project}
+                      title="Some Feed for today's Job(s)..."
+                    />
+                  </>
+                ) : (
+                  <>
+                    <JobList
+                      projects={projects}
+                      title="Some Feed for today's Job(s)..."
+                    />
+                  </>
+                )}
+              </>
+            )}
+          </table>
+          <button
+            id="confirm-complete-btn"
+            style={{ display: displayBtn }}
+            onClick={buttonHandler}
+          >
+            CONFIRM
+          </button>
+        </div>
       </div>
       {/* </div> */}
     </main>
