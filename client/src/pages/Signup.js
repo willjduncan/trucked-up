@@ -27,6 +27,8 @@ const Signup = () => {
         variables: { ...formState },
       });
 
+      console.log(data)
+
       if (data.errors) {
         setErrors(data.errors[0].extensions.errors);
       }
