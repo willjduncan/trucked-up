@@ -135,7 +135,11 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
+        {userdata() === "driver" ? (
         <DriverMap project={project} />
+        ) : (
+          <> </>
+        )}
       </div>
       {/* </div> */}
     </main>

@@ -95,15 +95,6 @@ export const ADD_PROJECT = gql`
   }
 `;
 
-// export const EDIT_CONFIRM = gql`
-//   mutation editConfirm($_id: _id!) {
-//     editComplete(name: $name) {
-//       _id
-//       name
-//     }
-//   }
-// `;
-
 export const EDIT_CONFIRM = gql`
   mutation editConfirm($_id: ID) {
     editConfirm(_id: $_id) {

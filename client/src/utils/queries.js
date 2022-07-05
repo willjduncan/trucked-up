@@ -13,7 +13,6 @@ export const QUERY_ME = gql`
         _id
         jobName
         description
-<<<<<<< HEAD
         driver {
           _id
           username
@@ -33,14 +32,6 @@ export const QUERY_ME = gql`
         # }
         completed
         confirmed
-=======
-      #   driver: [User]
-        startTime
-        pickUpAddress
-        deliveryAddress
-      #   createdAt
-      #   client: Client
->>>>>>> 36277ec9 (add signup and login styles)
       }
     }
   }
