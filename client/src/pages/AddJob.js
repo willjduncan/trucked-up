@@ -54,7 +54,6 @@ const [errors, setErrors] = useState({});
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       // add thought to database
       const response = await addJob({

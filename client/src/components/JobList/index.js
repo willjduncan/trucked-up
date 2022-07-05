@@ -7,7 +7,6 @@ const JobList = ({ projects }) => {
   if (!projects.length) {
     return <tbody><tr><td>No projects Yet</td></tr></tbody>;
   }
-
   return (
     <tbody>
       {/* <h3 style={{ margin: "30px", textAlign: "center" }}>Here all projects</h3> */}
@@ -24,7 +23,7 @@ const JobList = ({ projects }) => {
               <td style={{ backgroundColor: "white" }}>waiting for responce</td>
             )}
             <td>
-              <h4>{project.client.name}</h4>
+              <h4>{project.client?.name}</h4>
             </td>
             <td>
               <h4>{project.jobName}</h4>

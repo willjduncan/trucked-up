@@ -28,111 +28,114 @@ const Dashboard = () => {
   let req = QUERY_PROJECTS;
   // if user is driver req will be changed to QUERY_ME
 
-  // !!!!!!!!!! change displayBtn from "" to "none"
-  let displayBtn = "";
+  // by default Not show button for change job status
+  let displayBtn = "none";
+  // if user is driver show button and change query name
   if (userdata() === "driver") {
     req = QUERY_ME;
     displayBtn = "";
   }
   // use useQuery hook to make query request
   const { loading, data } = useQuery(req);
-  //
   const projects = data?.getProjects || [];
   const project = data?.me?.projects || [];
-  // const result = project.filter(project => project.completed === true);
-  
-  // change status of the last job in array of driver's jobs
+
+  // change status of the top job in array of driver's jobs
   const buttonHandler = async () => {
-    // !!!!!!!!!!! change all projects[n]._id to project[n]._id
-    console.log(projects.filter(project => (project.completed === true)))
-    const n = projects.length-1;
+    // create array of Not COMLETED jobs
+    const projectToDo = project.filter(
+      (project) => project.completed === false
+    );
+    // if array of job 0 - return
+    if (projectToDo.length === 0) {
+      console.log("projectToDo.length");
+      return;
+    }
     // if CONFIRMED change COMPLETE to true
-    if (projects[n].confirmed) {
+    if (projectToDo[0].confirmed) {
       try {
         const data = await editComplete({
-          variables: { _id: projects[0]._id },
+          variables: { _id: projectToDo[0]._id },
         });
         if (data) {
+          console.log(data);
           // !!!!!!! change to "none"
-          displayBtn = "";;
-          // document.getElementById("").remove();
+          displayBtn = "";
         }
-
       } catch (e) {
         console.error(e);
       }
-
     } else {
-      // if NOT CONFIRMED case
+      // if job is NOT CONFIRMED case
       try {
         const data = await editConfirm({
-          variables: { _id: projects[n]._id },
+          variables: { _id: projectToDo[0]._id },
         });
-        if (data.data.editConfirm.confirmed) {
-          console.log(data.data.editConfirm.confirmed);
-
-        }
       } catch (e) {
         console.error(e);
       }
     }
-    console.log(projects[n])
   };
 
   return (
     <main>
       {/* <DriverMap /> */}
       {/* <div className="flex-row justify-space-between"> */}
-        <div id="table-container"
+      <div
+        id="table-container"
         // className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}
-        >
-          <table id="job-list">
-            <thead>
+      >
+        <table id="job-list">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Client name</th>
+              <th>Project name</th>
+              <th>Start Time</th>
+              <th>Driver</th>
+              <th>Pickup address</th>
+              <th>Delivery address</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          {loading ? (
+            <tbody>
               <tr>
-                <th>Status</th>
-                <th>Client name</th>
-                <th>Project name</th>
-                <th>Start Time</th>
-                <th>Driver</th>
-                <th>Pickup address</th>
-                <th>Delivery address</th>
-                <th>Description</th>
+                <td>Loading...</td>
               </tr>
-            </thead>
-            {loading ? (
-              <tbody>
-                <tr>
-                  <td>Loading...</td>
-                </tr>
-              </tbody>
-            ) : (
-              // if user is driver - render project
-              <>
-                {userdata() === "driver" ? (
-                  <>
-                    <JobList
-                      projects={project.filter(project => (project.completed === false))}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                ) : (
-                  <>
-                    <JobList
-                      projects={projects}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                )}
-              </>
-            )}
-          </table>
-          
-          <button
-            id="confirm-complete-btn"
-            style={{ display: displayBtn }}
-            onClick={buttonHandler}
-          >CHANGE JOB STATUS</button>
-        </div>
+            </tbody>
+          ) : (
+            // if user is driver - render project
+            <>
+              {userdata() === "driver" ? (
+                <>
+                  <JobList
+                    projects={project.filter(
+                      (project) => project.completed === false
+                    )}
+                    title="Some Feed for today's Job(s)..."
+                  />
+                </>
+              ) : (
+                <>
+                  <JobList
+                    projects={projects}
+                    title="Some Feed for today's Job(s)..."
+                  />
+                </>
+              )}
+            </>
+          )}
+        </table>
+
+        <button
+          id="confirm-complete-btn"
+          style={{ display: displayBtn }}
+          onClick={buttonHandler}
+        >
+          CHANGE JOB STATUS
+        </button>
+      </div>
       {/* </div> */}
     </main>
   );

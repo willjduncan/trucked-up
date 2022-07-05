@@ -10,15 +10,28 @@ export const QUERY_ME = gql`
       # password
       position
       projects {
-      #   _id
+        _id
         jobName
-      #   description
-      #   driver: [User]
-      #   startTime
-      #   pickUpAddress
-      #   deliveryAddress
-      #   createdAt
-      #   client: Client
+        description
+        driver {
+          _id
+          username
+          # email
+          projects {
+            #   _id
+            jobName
+          }
+        }
+        startTime
+        pickUpAddress
+        deliveryAddress
+        #   createdAt
+        # client {
+        #   _id
+        #   name
+        # }
+        completed
+        confirmed
       }
     }
   }
@@ -30,8 +43,8 @@ export const QUERY_ME_COMPLETE = gql`
       username
       position
       projects {
-      #   _id
-      jobName
+        #   _id
+        jobName
         description
         startTime
         pickUpAddress
@@ -52,7 +65,7 @@ export const QUERY_ME_INCOMPLETE = gql`
       username
       position
       projects {
-      #   _id
+        #   _id
         jobName
         description
         startTime
@@ -101,15 +114,15 @@ export const QUERY_USER = gql`
       # password
       # position
       projects {
-      #   _id
+        #   _id
         jobName
-      #   description
-      #   driver: [User]
-      #   startTime
-      #   pickUpAddress
-      #   deliveryAddress
-      #   createdAt
-      #   client: Client
+        #   description
+        #   driver: [User]
+        #   startTime
+        #   pickUpAddress
+        #   deliveryAddress
+        #   createdAt
+        #   client: Client
       }
     }
   }
@@ -140,7 +153,7 @@ export const QUERY_CLIENTS = gql`
 `;
 
 export const QUERY_CLIENT = gql`
-  query getClient($name: String!){
+  query getClient($name: String!) {
     getClients(name: $name) {
       _id
       username
@@ -152,12 +165,12 @@ export const QUERY_CLIENT = gql`
         _id
         jobName
         description
-      #   driver: [User]
-      #   startTime
-      #   pickUpAddress
-      #   deliveryAddress
-      #   createdAt
-      #   client: Client
+        #   driver: [User]
+        #   startTime
+        #   pickUpAddress
+        #   deliveryAddress
+        #   createdAt
+        #   client: Client
       }
     }
   }
@@ -176,15 +189,15 @@ export const QUERY_PROJECTS = gql`
         # password
         # position
         projects {
-        #   _id
+          #   _id
           jobName
-        #   description
-        #   driver: {[User]}
-        #   startTime
-        #   pickUpAddress
-        #   deliveryAddress
-        #   createdAt
-        #   client
+          #   description
+          #   driver: {[User]}
+          #   startTime
+          #   pickUpAddress
+          #   deliveryAddress
+          #   createdAt
+          #   client
         }
       }
       startTime
@@ -194,7 +207,7 @@ export const QUERY_PROJECTS = gql`
       client {
         _id
         name
-      #   projects {}
+        #   projects {}
       }
       completed
       confirmed
