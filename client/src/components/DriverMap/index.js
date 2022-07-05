@@ -70,7 +70,7 @@ const DriverMap = ({ project }) => {
     setDone2(true);
     }
     fetchData()
-  },[])
+  },[deliverLong])
 
 
 

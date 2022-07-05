@@ -22,22 +22,23 @@ const Header = () => {
             <>
               {(userdata().data.position === "dispatcher") ? (
                 <>
-                  <Link to="/drivers">Drivers</Link>
+                  <Link className="navlinks" to="/drivers">Drivers</Link>
+                  <Link className="navlinks" to="/add">Add Job</Link>
                 </>
               ) : (
                 <>
-                <Link to="/completed_drives">Completed Drives</Link>
+                <Link className="navlinks" to="/completed_drives">Completed Drives</Link>
                 </>
               )}
-              <Link to="/dashboard">Dashboard</Link>
+              <Link className="navlinks" to="/dashboard">Dashboard</Link>
               <a href="/" onClick={logout}>
                 Logout
               </a>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link className="navlinks" to="/login">Login</Link>
+              <Link className="navlinks" to="/signup">Signup</Link>
             </>
           )}
         </nav>
