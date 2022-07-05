@@ -90,7 +90,6 @@ const Dashboard = () => {
           ) : (
             // if user is driver - render project
             <>
-<<<<<<< HEAD
               {userdata() === "driver" ? (
                 <>
                   <JobList
@@ -119,42 +118,6 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
-=======
-              <table id="job-list">
-                <thead>
-                  <tr>
-                    <th>Status</th>
-                    <th>Client name</th>
-                    <th>Project name</th>
-                    <th>Start Time</th>
-                    <th>Driver</th>
-                    <th>Pickup address</th>
-                    <th>Delivery address</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-
-                {/* {userdata() === "driver" ? (
-                  <>
-                    <JobList
-                      projects={project}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                ) : (
-                  <>
-                    <JobList
-                      projects={projects}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                )} */}
-              </table>
-            </>
-          )}
-        </div>
-        <DriverMap project={project}/>
->>>>>>> 36277ec9 (add signup and login styles)
       </div>
       {/* </div> */}
     </main>

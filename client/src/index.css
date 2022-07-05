@@ -251,7 +251,6 @@ header h1 {
   color: white;
 }
 
-<<<<<<< HEAD
 #table-container  {
   text-align: center;
 }
@@ -260,7 +259,7 @@ header h1 {
   margin: 10vh;
   height: 10vh;
   width: 50vh;
-=======
+}
 /* LOGIN AND SIGNUP STYLE */
 .login-title {
   color: var(--fourth-color);
@@ -297,5 +296,4 @@ header h1 {
   .button {
     width: 40%;
   }
->>>>>>> 36277ec9 (add signup and login styles)
 }
