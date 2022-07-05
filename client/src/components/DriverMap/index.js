@@ -74,7 +74,6 @@ const DriverMap = ({ project }) => {
 
 
   
-<<<<<<< HEAD
   
   const geojson = {
     type: "FeatureCollection",
@@ -93,21 +92,6 @@ const DriverMap = ({ project }) => {
     console.log(data);
     const latCoord = data.locations[0]?.referencePosition.latitude;
     const longCoord = data.locations[0]?.referencePosition.longitude;
-=======
-  useEffect(() => {
-      async function fetchData() {
-        console.log("PROJECT")
-        console.log(project[0].pickUpAddress)
-        let pick = project[0].pickUpAddress;
-        console.log(pick);
-    let coordinatesUrl =
-  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${pick}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
-    const response = await fetch(coordinatesUrl);
-    const data = await response.json();
-    console.log("data" + data)
-    const latCoord = data.locations[0].referencePosition.latitude;
-    const longCoord = data.locations[0].referencePosition.longitude;
->>>>>>> 36277ec9 (add signup and login styles)
     setPickupLat(parseFloat(latCoord));
     setPickupLong(parseFloat(longCoord));
     setLat(parseFloat(latCoord));

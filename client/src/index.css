@@ -259,6 +259,7 @@ header h1 {
   margin: 10vh;
   height: 10vh;
   width: 50vh;
+}
 /* LOGIN AND SIGNUP STYLE */
 .login-title {
   color: var(--fourth-color);
