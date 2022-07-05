@@ -84,7 +84,7 @@ const Dashboard = () => {
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
           <table>
           {loading ? (
-            <tbody>
+            <thead>
               <tr>
                 <th>Status</th>
                 <th>Client name</th>
@@ -126,7 +126,6 @@ const Dashboard = () => {
             </>
           )}
         </table>
-</div>
         <button
           id="confirm-complete-btn"
           style={{ display: displayBtn }}
@@ -137,7 +136,6 @@ const Dashboard = () => {
         </div>
         <DriverMap project={project}/>
       </div>
-      {/* </div> */}
     </main>
   );
 };
