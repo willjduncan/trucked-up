@@ -43,7 +43,7 @@
   useEffect(() => {
     async function fetchData() {
     let coordinatesUrl =
-  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
+  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project?.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     console.log(data);
@@ -61,7 +61,7 @@
   useEffect(() => {
     async function fetchData() {
       let coordinatesUrl =
-      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project.deliveryAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
+      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project?.deliveryAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
     const latCoord = data.locations[0]?.referencePosition.latitude;

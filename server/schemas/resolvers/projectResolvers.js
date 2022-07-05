@@ -133,14 +133,29 @@ module.exports = {
       return project;
     },
     editComplete: async (parent, { _id }, context) => {
-      const foundProject = await Project.find({ _id });
-      await foundProject.update({ completed: true });
-      return foundProject;
+      console.log(_id);
+      // const foundProject = await Project.find({ _id });
+      // await foundProject.update({ completed: true });
+
+      const updatedProject = await Project.findOneAndUpdate(
+        { _id: _id },
+        { completed: true},
+        { new: true }
+      );
+      return updatedProject;
     },
     editConfirm: async (parent, { _id }, context) => {
-      const foundProject = await Project.find({ _id });
-      await foundProject.update({ confirmed: true });
-      return foundProject;
+      console.log(_id);
+      // const foundProject = await Project.find({ _id });
+      // await foundProject.update({ confirmed: true });
+      // return foundProject;
+
+      const updatedProject = await Project.findOneAndUpdate(
+        { _id: _id },
+        { confirmed: true},
+        { new: true }
+      );
+      return updatedProject;
     },
   },
 };
