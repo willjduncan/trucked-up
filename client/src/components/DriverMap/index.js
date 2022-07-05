@@ -74,24 +74,19 @@ const DriverMap = ({ project }) => {
 
 
   
-  
-  const geojson = {
-    type: "FeatureCollection",
-    features: [
-      { type: "Feature", geometry: { type: "Point", coordinates: [{pickupLat},{pickupLong}] } },
-      { type: "Feature", geometry: { type: "Point", coordinates:  [{deliverLat},{deliverLong}]} },
-    ],
-  };
-  console.log(project);
   useEffect(() => {
-    async function fetchData() {
+      async function fetchData() {
+        console.log("PROJECT")
+        console.log(project[0].pickUpAddress)
+        let pick = project[0].pickUpAddress;
+        console.log(pick);
     let coordinatesUrl =
-  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project?.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
+  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${pick}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
-    console.log(data);
-    const latCoord = data.locations[0]?.referencePosition.latitude;
-    const longCoord = data.locations[0]?.referencePosition.longitude;
+    console.log("data" + data)
+    const latCoord = data.locations[0].referencePosition.latitude;
+    const longCoord = data.locations[0].referencePosition.longitude;
     setPickupLat(parseFloat(latCoord));
     setPickupLong(parseFloat(longCoord));
     setLat(parseFloat(latCoord));
