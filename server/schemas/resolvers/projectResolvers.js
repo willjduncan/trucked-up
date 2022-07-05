@@ -9,11 +9,11 @@ const { validateProjectAddition } = require("../../utils/validators");
 module.exports = {
   Query: {
     getProjects: async (parent, args, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("Errors", {
-          errors: { auth: "Not an authorized user." },
-        });
-      }
+      // if (!context.user) {
+      //   throw new AuthenticationError("Errors", {
+      //     errors: { auth: "Not an authorized user." },
+      //   });
+      // }
 
       const projects = await Project.find()
         .populate("driver")
