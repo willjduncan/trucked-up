@@ -167,23 +167,9 @@ header h1 {
 }
 
 /* MAP STYLES */
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-}
-#instructions {
-  position: absolute;
-  margin: 20px;
-  width: 20%;
-  top: 0;
-  bottom: 20%;
-  height: 250px;
-  padding: 20px;
-  background-color: #fff;
-  overflow-y: scroll;
-  font-family: sans-serif;
+.mapboxgl-map {
+  margin: 0 auto 10px auto;
+  
 }
 
 .button {
@@ -212,8 +198,9 @@ header h1 {
   display: flex;
   align-items: center;
   width: 750px;
-  margin-left: 20px;
+  margin: 7px auto;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .add {
   margin: 5px;

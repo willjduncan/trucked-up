@@ -73,6 +73,7 @@ const DriverMap = ({ project }) => {
     setDone2(true);
   }
 
+  //once the coordinates are fetched, render the page
   if (done1 && done2) {
     return (
       <div className="map-containter">

@@ -17,7 +17,6 @@ const Header = () => {
         <Link to="/">
           <h1>Truck It Up!</h1>
         </Link>
-        <Link to="/add-client">New Client</Link>
       </div>
 
       <nav className="text-center">
@@ -31,12 +30,13 @@ const Header = () => {
                 <Link className="navlinks" to="/add">
                   Add Job
                 </Link>
+                <Link to="/add-client">New Client</Link>
               </>
             ) : (
               <>
-                <Link className="navlinks" to="/completed_drives">
+                {/* <Link className="navlinks" to="/completed_drives">
                   Completed Drives
-                </Link>
+                </Link> */}
               </>
             )}
             <Link className="navlinks" to="/dashboard">
