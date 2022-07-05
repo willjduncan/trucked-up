@@ -91,9 +91,9 @@ const [errors, setErrors] = useState({});
           </label>
         </div>
         <div>
-          <label>Job Descriptionription
+          <label>Job Description
           <textarea
-            placeholder="Descriptionribe any additional useful information here"
+            placeholder="Describe any additional useful information here"
             name="description"
             value={description}
             onChange={handleDescriptionChange}
@@ -112,16 +112,26 @@ const [errors, setErrors] = useState({});
           ></input>
           </label>
         </div>
-        <div>
+          {/* <div>
+          <label>Start Time
+          <input
+            placeholder="9:00AM"
+            name="startTime"
+            //   value={startTime}
+            className="form-input col-12 col-md-9"
+          ></input>
+          </label>
+        </div> */}
+        {/* <div>
           <label>Driver Name
           <input
             placeholder="Name the driver here"
             name="driver"
-            //   value={thoughtText}
+            //   value={driverName}
             className="form-input col-12 col-md-9"
           ></input>
           </label>
-        </div>
+        </div> */}
         <div>
           <label>Driver Email
           <input

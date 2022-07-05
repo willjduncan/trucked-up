@@ -6,7 +6,7 @@ import { QUERY_ME } from "../utils/queries";
 import { useMutation } from "@apollo/client";
 import { EDIT_COMPLETE, EDIT_CONFIRM } from "../utils/mutations";
 import Auth from "../utils/auth";
-// import DriverMap from "../components/DriverMap";
+// import DriverMap from "../components/DriverMap"
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
@@ -80,24 +80,8 @@ const Dashboard = () => {
   return (
     <main>
       {/* <DriverMap /> */}
-      {/* <div className="flex-row justify-space-between"> */}
-      <div
-        id="table-container"
-        // className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}
-      >
-        <table id="job-list">
-          <thead>
-            <tr>
-              <th>Status</th>
-              <th>Client name</th>
-              <th>Project name</th>
-              <th>Start Time</th>
-              <th>Driver</th>
-              <th>Pickup address</th>
-              <th>Delivery address</th>
-              <th>Description</th>
-            </tr>
-          </thead>
+      <div className="flex-row justify-space-between">
+        <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
           {loading ? (
             <tbody>
               <tr>
