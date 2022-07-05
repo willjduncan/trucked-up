@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MERN Application",
   "main": "server/server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server/server.js",
     "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
