@@ -104,6 +104,7 @@ module.exports = {
         description,
         pickUpAddress,
         deliveryAddress,
+        
       });
 
       // Update driver projects array with created project
@@ -121,6 +122,9 @@ module.exports = {
         { new: true }
       );
 
+      // Update created project to hold ref to client
+      await project.update({ client: { _id: client._id } } );
+
       return project;
     },
     deleteProject: async (parent, { jobName }, context) => {
@@ -136,7 +140,6 @@ module.exports = {
     // change the boolean from default false to true when
     // driver push button to CONFIRM work assignment
     editConfirm: async (parent, { _id }, context) => {
-      console.log(_id);
       const updatedProject = await Project.findOneAndUpdate(
         { _id: _id },
         { confirmed: true },
@@ -146,7 +149,6 @@ module.exports = {
     },
     // driver push button to COMPLETE work assignment
     editComplete: async (parent, { _id }, context) => {
-      console.log(_id);
       const updatedProject = await Project.findOneAndUpdate(
         { _id: _id },
         { completed: true },
