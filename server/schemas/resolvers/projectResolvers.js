@@ -124,11 +124,11 @@ module.exports = {
       return project;
     },
     deleteProject: async (parent, { jobName }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("Errors", {
-          errors: { auth: "Not an authorized user." },
-        });
-      }
+      // if (!context.user) {
+      //   throw new AuthenticationError("Errors", {
+      //     errors: { auth: "Not an authorized user." },
+      //   });
+      // }
       const project = await Project.deleteOne({ jobName });
       return project;
     },

@@ -67,32 +67,16 @@ export const ADD_PROJECT = gql`
       _id
       jobName
       description
-      driver{
-        email
-        # email
-        # password
-        # position
-        # projects {
-        #   _id
-        #   jobName
-        #   description
-        #   driver: [User]
-        #   startTime
-        #   pickUpAddress
-        #   deliveryAddress
-        #   createdAt
-        #   client: Client
-        # }
-      }
-      # startTime
       pickUpAddress
       deliveryAddress
-      # createdAt
-      client{
-        # _id
-        name
-        # projects
+      driver {
+        email
       }
+      client {
+        name
+      }
+      # startTime
+      # createdAt
     }
   }
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_PROJECT } from "../utils/queries";
-import DriverMap from "../components/DriverMap"
+// import DriverMap from "../components/DriverMap"
 
 
 const SingleJob = (props) => {
@@ -21,7 +21,7 @@ const SingleJob = (props) => {
       <main>
         <div className="flex-row justify-space-between">
           <div className=''>
-                <DriverMap project={project}/>
+                {/* <DriverMap project={project}/> */}
                 <div>
                 <h2></h2>
                 </div>

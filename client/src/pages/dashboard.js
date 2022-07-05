@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PROJECTS } from "../utils/queries";
 import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
-import DriverMap from "../components/DriverMap"
+// import DriverMap from "../components/DriverMap"
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
@@ -27,7 +27,7 @@ const Dashboard = () => {
   const project = data?.me?.projects || [];
   return (
     <main>
-      <DriverMap />
+      {/* <DriverMap /> */}
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
           {loading ? (
