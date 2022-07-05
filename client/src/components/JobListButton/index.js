@@ -6,79 +6,81 @@ import { QUERY_ME_INCOMPLETE } from "../../utils/queries";
 
 
 const JobList = ({ projects }) => {
-    // const [editConfirm, { error }] = useMutation(EDIT_CONFIRMED, {
-    //   update(cache, { data: { project.confirmed: true } }) {
-    //     // could potentially not exist yet, so wrap in a try/catch
-    //     try {
-    //       // update me array's cache
-    //       const { me } = cache.readQuery({ query: QUERY_ME });
-    //       cache.writeQuery({
-    //         query: QUERY_ME,
-    //         data: { me: { ...me, projects: [...me.projects] } },
-    //       });
-    //     } catch (e) {
-    //       console.warn("First thought insertion by user!");
-    //     }
+//     const [editConfirm, { error }] = useMutation(EDIT_CONFIRMED, {
+//       update(cache, { data: { project.confirmed: true } }) {
+//         // could potentially not exist yet, so wrap in a try/catch
+//         try {
+//           // update me array's cache
+//           const { me } = cache.readQuery({ query: QUERY_ME });
+//           cache.writeQuery({
+//             query: QUERY_ME,
+//             data: { me: { ...me, projects: [...me.projects] } },
+//           });
+//         } catch (e) {
+//           console.warn("First thought insertion by user!");
+//         }
   
-    //     // update array's cache
-    //     const { projects } = cache.readQuery({ query: QUERY_ME_INCOMPLETE });
-    //     cache.writeQuery({
-    //       query: QUERY_ME_INCOMPLETE,
-    //       data: { projects: [...projects] },
-    //     });
-    //   },
-    // });
+//         // update array's cache
+//         const { projects } = cache.readQuery({ query: QUERY_ME_INCOMPLETE });
+//         cache.writeQuery({
+//           query: QUERY_ME_INCOMPLETE,
+//           data: { projects: [...projects] },
+//         });
+//       },
+//     });
 
-    // const [editComplete, { error }] = useMutation(EDIT_COMPLETE, {
-    //     update(cache, { data: { completed: true } }) {
-    //       // could potentially not exist yet, so wrap in a try/catch
-    //       try {
-    //         // update me array's cache
-    //         const { me } = cache.readQuery({ query: QUERY_ME });
-    //         cache.writeQuery({
-    //           query: QUERY_ME,
-    //           data: { me: { ...me, projects: [...me.projects] } },
-    //         });
-    //       } catch (e) {
-    //         console.warn("First thought insertion by user!");
-    //       }
+//     const [editComplete, { error }] = useMutation(EDIT_COMPLETE, {
+//         update(cache, { data: { completed: true } }) {
+//           // could potentially not exist yet, so wrap in a try/catch
+//           try {
+//             // update me array's cache
+//             const { me } = cache.readQuery({ query: QUERY_ME });
+//             cache.writeQuery({
+//               query: QUERY_ME,
+//               data: { me: { ...me, projects: [...me.projects] } },
+//             });
+//           } catch (e) {
+//             console.warn("First thought insertion by user!");
+//           }
     
-    //       // update array's cache
-    //       const { projects } = cache.readQuery({ query: QUERY_ME_INCOMPLETE });
-    //       cache.writeQuery({
-    //         query: QUERY_ME_INCOMPLETE,
-    //         data: { projects: [...projects] },
-    //       });
-    //     },
-    //   });
+//           // update array's cache
+//           const { projects } = cache.readQuery({ query: QUERY_ME_INCOMPLETE });
+//           cache.writeQuery({
+//             query: QUERY_ME_INCOMPLETE,
+//             data: { projects: [...projects] },
+//           });
+//         },
+//       });
   
-    const handleConfirm = async (event) => {
-      event.preventDefault();
-      try {
-        // add thought to database
-        const [editConfirm, { data, loading, error }] = useMutation(EDIT_CONFIRM);
+//     const handleConfirm = async (event) => {
+//       event.preventDefault();
+//       try {
+//         // add thought to database
+//         const [editConfirm, { data, loading, error }] = useMutation(EDIT_CONFIRM);
   
-      } catch (e) {
-        console.error(e);
-      }
-    };
+//       } catch (e) {
+//         console.error(e);
+//       }
+//     };
 
-    const handleComplete = async (event) => {
-        event.preventDefault();
-        try {
-          // add thought to database
-          await editComplete({
-            variables
-          });
+//     const handleComplete = async (event) => {
+//         event.preventDefault();
+//         try {
+//           // add thought to database
+//           await editComplete({
+//             variables
+//           });
     
-        } catch (e) {
-          console.error(e);
-        }
-      };
+//         } catch (e) {
+//           console.error(e);
+//         }
+//       };
 
-  if (!projects.length) {
-    return <h3>No projects Yet</h3>;
-  }
+
+//   console.log(projects);
+//   if (!projects.length) {
+//     return <h3>No projects Yet</h3>;
+//   }
 
   return (
     <div>

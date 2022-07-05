@@ -68,6 +68,9 @@ header h1 {
   background-color: var(--primary-color);
   border-radius: 15px;
 }
+.navlinks {
+  margin: 0 14px;
+}
 
 /* HOME STYLES */
 .home-cont {
