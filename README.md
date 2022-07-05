@@ -65,11 +65,11 @@ THEN I can do things such as retrieving, adding, updating, and deleting data.
 Work was divided in the following ways:
 
 Matt: backend, models, schema
-Will: wireframe, home, driver pages
-Sergii: login & signin, dispatcher pages
+Will: wireframe, home page, addJob page, maps
+Sergii: login & signin, dispatcher and driver dashboards
 Rafael: client pages 
 
-
+The biggest challenges came from the front end, such as getting the map to work and managing to display queries and implement mutations. 
 
 
 
@@ -86,50 +86,38 @@ While this project's repository is available on Github, the site it deployed to 
 
 Once the project is cloned and the dependencies downloaded, type "npm start" to run the program. 
 
-Screenshots of the program in action is shown below, at...
+Screenshots of the program in action is shown below, at the dispatcher's dashboard and the driver's dashboard
 
-![screenshot of Active Site, Home Screen](./public/images/screenshot-home.png)
+![screenshot of Active Site, Dispatcher Dashboard](./public/images/screenshot-dis-dash.png)
 
-![screenshot of Active Site, editing a Gem](./public/images/screenshot-edit.png)
-
-![screenshot of Active Site, Login](./public/images/screenshot-login.png)
+![screenshot of Active Site, Driver Dashboard](./public/images/screenshot-driv-dash.png)
 
 
-Screenshots of the ....  
+Screenshots of a successful add-project and login are shown to demonstrate the functionality through GraphQL 
 
-![screenshot of edit-gem.handlebars](./public/images/screenshot-handlebars.png)
-![screenshot of edit-gem.js](./public/images/screenshot-edit-gem.png)
-![screenshot of gem-routes.js](./public/images/screenshot-gem-routes.png)
-![screenshot of gem model](./public/images/screenshot-model.png)
+![screenshot of AddProject](./client/public/screenshots/screenshot-add-project.png)
+![screenshot of Login](./client/public/screenshots/screenshot-login.png)
 
 
 ## Credits
 
-The coding boot camp Professional README Guide found at https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide was used as a template for this README. The license was picked from [https://choosealicense.com/](https://choosealicense.com/).The WHEN/THEN section of this README was based off the project assignment Acceptance Criteria. Stack Overflow, MDN Web Docs, W3, and Google were critical to our success. The website icon was created by BZZRINCANTATION and downloaded from Flaticon. The home page image was taken by Pexels from Pixabay.
-
-
-
-
-
-
+The coding boot camp Professional README Guide found at https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide was used as a template for this README. The license was picked from [https://choosealicense.com/](https://choosealicense.com/).The WHEN/THEN section of this README was based off the project assignment Acceptance Criteria. Stack Overflow, MDN Web Docs, W3, and Google were critical to our success. The website icon was created by BZZRINCANTATION and downloaded from Flaticon. The home page image was taken by Pexels from Pixabay. PTV's API is used to convert addresses to coordinates and MapBox is used to render the map. Other npm packages used include react-copy-to-clipboard. 
 
 
 
 ## Contributing
 
-If you make changes, test it locally on a branch before pushing to main. Clone from the github site and make sure to create your own .env file with your own credentials.
+If you make changes, test it locally on a branch before pushing to main. Clone from the github site and make sure to create your own .env file with your own credentials. Run "npm run dev" from the root folder to start both client and server sides. 
 
 
 ## Additions
 
-First, refactoring is always welcome. 
-
-
+First, refactoring is always welcome. It would be great to turn this project into a PWA so that drivers can update the completion of jobs with ease from wherever they may be. Allowing the map to show routes, to include a home (or work) address, travel time, and tolls, would greatly improve the map's overall use to the driver. Dispatcher-side improvements include the ability to edit projects.
 
 
 ## Tests
 
-No Jest tests written were made for this project, but GraphQL is a critical tool in letting you test the program's GET, POST, PUT, and DELETE methods. If you want to run tests...
+No Jest tests written were made for this project, but GraphQL is a critical tool in letting you test the program's GET, POST, PUT, and DELETE methods. If you want to run tests, make sure the you have a MongoDB URI and a JWT Secret. 
 
 
 ## Questions
@@ -156,6 +144,8 @@ Github: [https://github.com/sergiionyx](https://github.com/sergiionyx)
 
 Will Duncan: willdunc12@gmail.com
 Github: [https://github.com/willjduncan](https://github.com/willjduncan)
+
+Rafael Dickerson: 
 
 
 
