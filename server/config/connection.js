@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-
-//FIX DB NAME
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/PUT_YOUR_DB_NAME_HERE",
-  {
+mongoose
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/trucked-up', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }
-);
+  })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(() => console.log("MongoDB connetion error"));
+
+module.exports = mongoose.connection;
