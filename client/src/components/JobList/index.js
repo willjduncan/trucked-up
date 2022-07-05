@@ -16,12 +16,12 @@ const JobList = ({ projects }) => {
         projects.map((project) => (
           <tr key={project._id}>
             {/* check confirm and complete to color an icon of td */}
-            {project.complited ? (
+            {( project.confirmed && project.completed ) ? (
               <td style={{ backgroundColor: "green" }}>completed</td>
-            ) : project.confirmed ? (
+            ) : (project.confirmed && !project.completed) ? (
               <td style={{ backgroundColor: "blue" }}>confirmed</td>
             ) : (
-              <td style={{ backgroundColor: "" }}>waiting for responce</td>
+              <td style={{ backgroundColor: "white" }}>waiting for responce</td>
             )}
             <td>
               <h4>{project.client.name}</h4>

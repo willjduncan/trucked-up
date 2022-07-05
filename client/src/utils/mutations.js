@@ -62,12 +62,26 @@ export const ADD_CLIENT = gql`
 `;
 
 export const ADD_PROJECT = gql`
-  mutation addProject($driverEmail: String!, $clientName: String!, $jobName: String!, $description: String!, $pickUpAddress: String!, $deliveryAddress: String!) {
-    addProject(driverEmail: $driverEmail, clientName: $clientName, jobName: $jobName, description: $description, pickUpAddress: $pickUpAddress, deliveryAddress: $deliveryAddress) {
+  mutation addProject(
+    $driverEmail: String!
+    $clientName: String!
+    $jobName: String!
+    $description: String!
+    $pickUpAddress: String!
+    $deliveryAddress: String!
+  ) {
+    addProject(
+      driverEmail: $driverEmail
+      clientName: $clientName
+      jobName: $jobName
+      description: $description
+      pickUpAddress: $pickUpAddress
+      deliveryAddress: $deliveryAddress
+    ) {
       _id
       jobName
       description
-      driver{
+      driver {
         email
         # email
         # password
@@ -88,7 +102,7 @@ export const ADD_PROJECT = gql`
       pickUpAddress
       deliveryAddress
       # createdAt
-      client{
+      client {
         # _id
         name
         # projects
@@ -97,20 +111,29 @@ export const ADD_PROJECT = gql`
   }
 `;
 
+// export const EDIT_CONFIRM = gql`
+//   mutation editConfirm($_id: _id!) {
+//     editComplete(name: $name) {
+//       _id
+//       name
+//     }
+//   }
+// `;
+
 export const EDIT_CONFIRM = gql`
-  mutation editConfirm($_id: _id!) {
-    editComplete(name: $name) {
+  mutation editConfirm($_id: ID) {
+    editConfirm(_id: $_id) {
       _id
-      name
+      confirmed
     }
   }
 `;
 
 export const EDIT_COMPLETE = gql`
-  mutation editComplete($_id: _id!) {
-    editComplete(name: $name) {
+  mutation editComplete($_id: ID) {
+    editComplete(_id: $_id) {
       _id
-      name
+      completed
     }
   }
 `;

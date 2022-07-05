@@ -18,11 +18,9 @@ const Signup = () => {
     event.preventDefault();
     // use try/catch instead of promises to handle errors
     try {
-      console.log("Before Querry");
       const data = await register({
         variables: { ...formState },
       });
-      console.log(data)
       if (data.errors) {
         setErrors(data.errors[0].extensions.errors);
       }

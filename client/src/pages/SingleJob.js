@@ -12,7 +12,6 @@ const SingleJob = (props) => {
       variables: { id: _id },
     });
   
-    console.log(typeof data);
     const project = data?.project || {};
   
     if (loading) {
