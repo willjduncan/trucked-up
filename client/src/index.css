@@ -264,6 +264,10 @@ header h1 {
 }
 
 /* JobList */
+#table-container {
+  margin: 3vh;
+}
+
 #job-list {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -285,4 +289,14 @@ header h1 {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+#table-container  {
+  text-align: center;
+}
+
+#confirm-complete-btn {
+  margin: 10vh;
+  height: 10vh;
+  width: 50vh;
 }

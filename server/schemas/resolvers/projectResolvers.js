@@ -132,27 +132,24 @@ module.exports = {
       const project = await Project.deleteOne({ jobName });
       return project;
     },
-    editComplete: async (parent, { _id }, context) => {
+    
+    // change the boolean from default false to true when
+    // driver push button to CONFIRM work assignment
+    editConfirm: async (parent, { _id }, context) => {
       console.log(_id);
-      // const foundProject = await Project.find({ _id });
-      // await foundProject.update({ completed: true });
-
       const updatedProject = await Project.findOneAndUpdate(
         { _id: _id },
-        { completed: true},
+        { confirmed: true },
         { new: true }
       );
       return updatedProject;
     },
-    editConfirm: async (parent, { _id }, context) => {
+    // driver push button to COMPLETE work assignment
+    editComplete: async (parent, { _id }, context) => {
       console.log(_id);
-      // const foundProject = await Project.find({ _id });
-      // await foundProject.update({ confirmed: true });
-      // return foundProject;
-
       const updatedProject = await Project.findOneAndUpdate(
         { _id: _id },
-        { confirmed: true},
+        { completed: true },
         { new: true }
       );
       return updatedProject;
