@@ -7,42 +7,56 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  function userdata () {
+  function userdata() {
     return Auth.getProfile();
   }
 
   return (
     <header className="header">
-      <Link to="/">
-        <h1>Truck It Up!</h1>
-      </Link>
+      <div className="flex-row">
+        <Link to="/">
+          <h1>Truck It Up!</h1>
+        </Link>
+        <Link to="/add-client">New Client</Link>
+      </div>
 
-        <nav className="text-center">
-          {Auth.loggedIn() ? (
-            <>
-              {(userdata().data.position === "dispatcher") ? (
-                <>
-                  <Link className="navlinks" to="/drivers">Drivers</Link>
-                  <Link className="navlinks" to="/add">Add Job</Link>
-                </>
-              ) : (
-                <>
-                <Link className="navlinks" to="/completed_drives">Completed Drives</Link>
-                </>
-              )}
-              <Link className="navlinks" to="/dashboard">Dashboard</Link>
-              <a href="/" onClick={logout}>
-                Logout
-              </a>
-            </>
-          ) : (
-            <>
-              <Link className="navlinks" to="/login">Login</Link>
-              <Link className="navlinks" to="/signup">Signup</Link>
-            </>
-          )}
-        </nav>
-      
+      <nav className="text-center">
+        {Auth.loggedIn() ? (
+          <>
+            {userdata().data.position === "dispatcher" ? (
+              <>
+                <Link className="navlinks" to="/drivers">
+                  Drivers
+                </Link>
+                <Link className="navlinks" to="/add">
+                  Add Job
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link className="navlinks" to="/completed_drives">
+                  Completed Drives
+                </Link>
+              </>
+            )}
+            <Link className="navlinks" to="/dashboard">
+              Dashboard
+            </Link>
+            <a href="/" onClick={logout}>
+              Logout
+            </a>
+          </>
+        ) : (
+          <>
+            <Link className="navlinks" to="/login">
+              Login
+            </Link>
+            <Link className="navlinks" to="/signup">
+              Signup
+            </Link>
+          </>
+        )}
+      </nav>
     </header>
   );
 };

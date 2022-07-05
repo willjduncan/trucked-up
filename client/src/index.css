@@ -72,6 +72,11 @@ header h1 {
   margin: 0 14px;
 }
 
+.flex-row {
+  display: flex;
+  align-items: baseline;
+}
+
 /* HOME STYLES */
 .home-cont {
   background-image: url("../public/images/home-img.jpg");
@@ -277,24 +282,29 @@ header h1 {
   width: 100%;
 }
 
-#job-list td, #job-list th {
+#job-list td,
+#job-list th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#job-list tr:nth-child(even){background-color: #f2f2f2;}
+#job-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#job-list tr:hover {background-color: #ddd;}
+#job-list tr:hover {
+  background-color: #ddd;
+}
 
 #job-list th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
 
-#table-container  {
+#table-container {
   text-align: center;
 }
 
@@ -302,4 +312,79 @@ header h1 {
   margin: 10vh;
   height: 10vh;
   width: 50vh;
+}
+
+/* CLIENT ADDITION */
+
+.clientContain {
+  height: calc(100vh - 135px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clientForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clientInput {
+  width: 100%;
+  background-color: #5a5a5a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clientInput:hover {
+  transform: scale(1.05);
+}
+
+.clientSubmit {
+  
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #000000;
+  border-color: #000000;
+}
+
+.clientSubmit:hover {
+  background-color: #00a118;
+  border-color: #036e4a;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
 }
