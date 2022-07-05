@@ -1,8 +1,9 @@
 /* VARIABLES */
 :root {
   --primary-color: #141414;
-  --secondary-color: #f55f14;
-  --tertiary-color: #f9f9f9;
+  --secondary-color: #f55f14c9;
+  /* --tertiary-color: #f9f9f9; */
+  --tertiary-color: aliceblue;
   --fourth-color: #727d71;
   --fifth-color: #778da9;
 }
@@ -290,7 +291,7 @@ header h1 {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: var(--secondary-color);
   color: white;
 }
 
