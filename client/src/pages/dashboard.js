@@ -80,7 +80,6 @@ const Dashboard = () => {
 
   return (
     <main>
-      {/* <DriverMap /> */}
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
           <table id="job-list">
@@ -106,30 +105,36 @@ const Dashboard = () => {
               // if user is driver - render project
               <>
                 {userdata() === "driver" ? (
-                  <>
-                    <JobList
-                      projects={project}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                ) : (
-                  <>
-                    <JobList
-                      projects={projects}
-                      title="Some Feed for today's Job(s)..."
-                    />
-                  </>
-                )}
-              </>
-            )}
-          </table>
-          
-          <button
-            id="confirm-complete-btn"
-            style={{ display: displayBtn }}
-            onClick={buttonHandler}
-          >CHANGE JOB STATUS</button>
+
+                <>
+                  <JobList
+                    projects={project.filter(
+                      (project) => project.completed === false
+                    )}
+                    title="Some Feed for today's Job(s)..."
+                  />
+                </>
+              ) : (
+                <>
+                  <JobList
+                    projects={projects}
+                    title="Some Feed for today's Job(s)..."
+                  />
+                </>
+              )}
+            </>
+          )}
+        </table>
+
+        <button
+          id="confirm-complete-btn"
+          style={{ display: displayBtn }}
+          onClick={buttonHandler}
+        >
+          CHANGE JOB STATUS
+        </button>
         </div>
+        <DriverMap project={project}/>
       </div>
       {/* </div> */}
     </main>

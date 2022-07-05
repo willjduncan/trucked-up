@@ -15,7 +15,7 @@ const JobList = ({ projects }) => {
         projects.map((project) => (
           <tr key={project._id}>
             {/* check confirm and complete to color an icon of td */}
-            {( project.confirmed && project.completed ) ? (
+            {project.completed ? (
               <td style={{ backgroundColor: "green" }}>completed</td>
             ) : (project.confirmed && !project.completed) ? (
               <td style={{ backgroundColor: "blue" }}>confirmed</td>
@@ -23,7 +23,7 @@ const JobList = ({ projects }) => {
               <td style={{ backgroundColor: "white" }}>waiting for responce</td>
             )}
             <td>
-              <h4>{project.client?.name}</h4>
+              {/* <h4>{project.client.name}</h4> */}
             </td>
             <td>
               <h4>{project.jobName}</h4>
@@ -32,7 +32,7 @@ const JobList = ({ projects }) => {
               <h4>{project.startTime}</h4>
             </td>
             <td>
-              <h4>{project.driver.map((driverr) => [driverr.username])}</h4>
+              {/* <h4>{project.driver.map((driverr) => [driverr.username])}</h4> */}
             </td>
             <td>
               <h4>{project.pickUpAddress}</h4>

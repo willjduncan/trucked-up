@@ -161,49 +161,6 @@ header h1 {
   background: var(--tertiary-color);
 }
 
-#addJobForm {
-  align-self: center;
-  color: var(--primary-color);
-  padding: 15px 20px;
-  margin: 0 auto 0 auto;
-  border: 1px solid var(--secondary-color);
-  border-radius: 10px;
-  background-color: rgb(46, 64, 87, 0.5);
-}
-#addJobForm input,
-#addJobForm textarea {
-  border: 1px solid var(--secondary-color);
-  display: block;
-  padding: 6px 15px;
-  font-size: 16px;
-  color: var(--secondary-color);
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.75);
-}
-#addJobForm input:focus,
-.addJobForm textarea:focus {
-  background-color: rgba(255, 255, 255, 1);
-  outline: none;
-}
-#addJobForm button {
-  width: 20%;
-  border: none;
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  text-align: center;
-  margin-top: 10px;
-  padding: 15px 0;
-  font-size: 16px;
-  border-radius: 10px;
-}
-#addJobForm button:hover {
-  color: var(--secondary-color);
-  background: var(--tertiary-color);
-}
-
 /* MAP STYLES */
 #map {
   position: absolute;
@@ -302,4 +259,40 @@ header h1 {
   margin: 10vh;
   height: 10vh;
   width: 50vh;
+/* LOGIN AND SIGNUP STYLE */
+.login-title {
+  color: var(--fourth-color);
+  width: 100%;
+  font-size: 1.9rem;
+  margin: 40px 0;
+  /* margin-left: 5%; */
+  text-align: center;
+}
+.login-form{
+  align-self: center;
+  width: 70%;
+  color: var(--primary-color);
+  padding: 15px 20px;
+  margin: 0 auto 60px auto;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  background-color: rgb(46, 64, 87, 0.5);
+}
+.login-form input, .login-form select {
+  border: 1px solid var(--secondary-color);
+  display: block;
+  padding: 6px 15px;
+  font-size: 16px;
+  color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (max-width: 575px) {
+  .button {
+    width: 40%;
+  }
 }
