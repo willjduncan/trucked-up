@@ -81,6 +81,7 @@ const Dashboard = () => {
     <main>
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
+          <table>
           {loading ? (
             <tbody>
               <tr>
@@ -110,7 +111,7 @@ const Dashboard = () => {
             </>
           )}
         </table>
-
+</div>
         <button
           id="confirm-complete-btn"
           style={{ display: displayBtn }}

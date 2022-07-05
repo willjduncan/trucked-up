@@ -74,26 +74,6 @@ const DriverMap = ({ project }) => {
 
 
   
-<<<<<<< HEAD
-  
-  const geojson = {
-    type: "FeatureCollection",
-    features: [
-      { type: "Feature", geometry: { type: "Point", coordinates: [{pickupLat},{pickupLong}] } },
-      { type: "Feature", geometry: { type: "Point", coordinates:  [{deliverLat},{deliverLong}]} },
-    ],
-  };
-  console.log(project);
-  useEffect(() => {
-    async function fetchData() {
-    let coordinatesUrl =
-  `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project?.pickUpAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
-    const response = await fetch(coordinatesUrl);
-    const data = await response.json();
-    console.log(data);
-    const latCoord = data.locations[0]?.referencePosition.latitude;
-    const longCoord = data.locations[0]?.referencePosition.longitude;
-=======
   useEffect(() => {
       async function fetchData() {
         console.log("PROJECT")
@@ -107,7 +87,6 @@ const DriverMap = ({ project }) => {
     console.log("data" + data)
     const latCoord = data.locations[0].referencePosition.latitude;
     const longCoord = data.locations[0].referencePosition.longitude;
->>>>>>> 36277ec9 (add signup and login styles)
     setPickupLat(parseFloat(latCoord));
     setPickupLong(parseFloat(longCoord));
     setLat(parseFloat(latCoord));
@@ -119,14 +98,6 @@ const DriverMap = ({ project }) => {
 
   useEffect(() => {
     async function fetchData() {
-<<<<<<< HEAD
-      let coordinatesUrl =
-      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${project?.deliveryAddress}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
-    const response = await fetch(coordinatesUrl);
-    const data = await response.json();
-    const latCoord = data.locations[0]?.referencePosition.latitude;
-    const longCoord = data.locations[0]?.referencePosition.longitude;
-=======
         setTimeout(() => {
             console.log("Delayed for 1 second.");
           }, 1000)
@@ -137,7 +108,6 @@ const DriverMap = ({ project }) => {
     const data = await response.json();
     const latCoord = data.locations[0].referencePosition.latitude;
     const longCoord = data.locations[0].referencePosition.longitude;
->>>>>>> 36277ec9 (add signup and login styles)
     setDeliverLat(parseFloat(latCoord));
     setDeliverLong(parseFloat(longCoord));
     setDone2(true);
