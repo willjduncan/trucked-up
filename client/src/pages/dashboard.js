@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import JobList from "../components/JobList";
 import { useQuery } from "@apollo/client";
 import { QUERY_PROJECTS } from "../utils/queries";
@@ -10,23 +10,13 @@ import Auth from "../utils/auth";
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
-  const [jobtatus, setJobtatus] = useState("");
-  const buttonHandler = () => {
-    if (jobtatus === { name: "CONFIRM", confirmed: true }) {
-      setJobtatus({ name: "COMPLETED", complited: true });
-      console.log("COMPLETED!!");
-      console.log(jobtatus);
-    } else if (jobtatus === "") {
-      setJobtatus({ name: "CONFIRM", confirmed: true });
-      console.log("CONFIRMED!!");
-      console.log(jobtatus);
-      document.getElementById("confirm-complete-btn").innerText = "COMPLETE!";
-    } else {
-      console.log(jobtatus);
-      console.log(typeof jobtatus);
-    }
-  };
-  console.log(jobtatus);
+
+  const [editConfirm] = useMutation(EDIT_CONFIRM, {
+    errorPolicy: "all",
+  });
+  const [editComplete] = useMutation(EDIT_COMPLETE, {
+    errorPolicy: "all",
+  });
 
   const loggedIn = Auth.loggedIn();
 
@@ -39,7 +29,9 @@ const Dashboard = () => {
   // by default QUERY will be for all project
   let req = QUERY_PROJECTS;
   // if user is driver req will be changed to QUERY_ME
-  let displayBtn = "none";
+
+  // !!!!!!!!!! change displayBtn from "" to "none"
+  let displayBtn = "";
   if (userdata() === "driver") {
     req = QUERY_ME;
     displayBtn = "";
@@ -131,14 +123,12 @@ const Dashboard = () => {
               </>
             )}
           </table>
+          
           <button
             id="confirm-complete-btn"
             style={{ display: displayBtn }}
             onClick={buttonHandler}
-          >
-            CONFIRM
-          </button>
-          <DriverMap project={projects}/>
+          >CHANGE JOB STATUS</button>
         </div>
       </div>
       {/* </div> */}
