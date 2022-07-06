@@ -376,6 +376,7 @@ header h1 {
   background: rgba(255, 255, 255, 0.75);
 }
 
+<<<<<<< HEAD
 /* LOGIN AND SIGNUP STYLE */
 .login-title {
   color: var(--fourth-color);
@@ -413,3 +414,4 @@ header h1 {
     width: 40%;
   }
 }
+
