@@ -39,6 +39,7 @@ const Dashboard = () => {
   const { loading, data } = useQuery(req);
   const projects = data?.getProjects || [];
   const project = data?.me?.projects || [];
+  console.log(projects);
 
   // change status of the top job in array of driver's jobs
   const buttonHandler = async () => {

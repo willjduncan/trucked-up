@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_PROJECT } from "../utils/mutations";
 // import { QUERY_CLIENT, QUERY_ME } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+import { QUERY_USERS } from "../utils/queries";
 
 const AddJobForm = () => {
   const [jobName, setName] = useState("");
@@ -11,6 +13,12 @@ const AddJobForm = () => {
   const [pickUpAddress, setPickup] = useState("");
   const [deliveryAddress, setDeliver] = useState("");
   const [addJob] = useMutation(ADD_PROJECT);
+
+
+  const { loading, data } = useQuery(QUERY_USERS);
+
+  const users = data?.getUsers || [];
+  console.log(users);
   // , {
   //   update(cache, { data: { addJob } }) {
   // try {
@@ -32,7 +40,7 @@ const AddJobForm = () => {
   // });
   //   },
   // });
-const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -42,7 +50,10 @@ const [errors, setErrors] = useState({});
   const handleClientChange = (event) => {
     setClient(event.target.value);
   };
+  console.log(driverEmail);
   const handleEmailChange = (event) => {
+    console.log(driverEmail);
+    console.log(event);
     setEmail(event.target.value);
   };
   const handlePickupChange = (event) => {
@@ -57,7 +68,14 @@ const [errors, setErrors] = useState({});
     try {
       // add thought to database
       const response = await addJob({
-        variables: { jobName, description, clientName, driverEmail, pickUpAddress, deliveryAddress },
+        variables: {
+          jobName,
+          description,
+          clientName,
+          driverEmail,
+          pickUpAddress,
+          deliveryAddress,
+        },
       });
 
       if (response.errors) {
@@ -80,39 +98,42 @@ const [errors, setErrors] = useState({});
     <div>
       <form id="addJobForm" onSubmit={handleFormSubmit}>
         <div>
-          <label>Job Name
-          <input
-            placeholder="Give a title to this assignment"
-            name="jobname"
-            value={jobName}
-            onChange={handleNameChange}
-            className="form-input col-12 col-md-9"
-          ></input>
+          <label>
+            Job Name
+            <input
+              placeholder="Give a title to this assignment"
+              name="jobname"
+              value={jobName}
+              onChange={handleNameChange}
+              className="form-input col-12 col-md-9"
+            ></input>
           </label>
         </div>
         <div>
-          <label>Job Description
-          <textarea
-            placeholder="Describe any additional useful information here"
-            name="description"
-            value={description}
-            onChange={handleDescriptionChange}
-            className="form-input col-12 col-md-9"
-          ></textarea>
+          <label>
+            Job Description
+            <textarea
+              placeholder="Describe any additional useful information here"
+              name="description"
+              value={description}
+              onChange={handleDescriptionChange}
+              className="form-input col-12 col-md-9"
+            ></textarea>
           </label>
         </div>
         <div>
-          <label>Client Name
-          <input
-            placeholder="Name the client here"
-            name="client"
-            value={clientName}
-            onChange={handleClientChange}
-            className="form-input col-12 col-md-9"
-          ></input>
+          <label>
+            Client Name
+            <input
+              placeholder="Name the client here"
+              name="client"
+              value={clientName}
+              onChange={handleClientChange}
+              className="form-input col-12 col-md-9"
+            ></input>
           </label>
         </div>
-          {/* <div>
+        {/* <div>
           <label>Start Time
           <input
             placeholder="9:00AM"
@@ -132,37 +153,55 @@ const [errors, setErrors] = useState({});
           ></input>
           </label>
         </div> */}
-        <div>
-          <label>Driver Email
-          <input
-            placeholder="email@example.com"
-            name="email"
+        {/* <label>
+          Driver Email
+          <select
+            name="position"
+            type="position"
+            className="form-input col-12 col-md-9"
+            id="position"
             value={driverEmail}
             onChange={handleEmailChange}
-            className="form-input col-12 col-md-9"
-          ></input>
+          >
+            <option name='driver@email.com'>driver@email.com</option>
+            <option name='someone@email.com'>someone@email.com</option>
+          </select>
+        </label> */}
+
+        <div>
+          <label>
+            Driver Email
+            <input
+              placeholder="email@example.com"
+              name="email"
+              value={driverEmail}
+              onChange={handleEmailChange}
+              className="form-input col-12 col-md-9"
+            ></input>
           </label>
         </div>
         <div>
-          <label>Pickup Address
-          <textarea
-            placeholder="1234 Example Road, Mystery Mississippi, 12345"
-            name="pickup"
-            value={pickUpAddress}
-            onChange={handlePickupChange}
-            className="form-input col-12 col-md-9"
-          ></textarea>
+          <label>
+            Pickup Address
+            <textarea
+              placeholder="1234 Example Road, Mystery Mississippi, 12345"
+              name="pickup"
+              value={pickUpAddress}
+              onChange={handlePickupChange}
+              className="form-input col-12 col-md-9"
+            ></textarea>
           </label>
         </div>
         <div>
-          <label>Delivery Address
-          <textarea
-            placeholder="1234 For Instance Ave, Curiosity Connecticut, 12345"
-            name="deliver"
-            value={deliveryAddress}
-            onChange={handleDeliverChange}
-            className="form-input col-12 col-md-9"
-          ></textarea>
+          <label>
+            Delivery Address
+            <textarea
+              placeholder="1234 For Instance Ave, Curiosity Connecticut, 12345"
+              name="deliver"
+              value={deliveryAddress}
+              onChange={handleDeliverChange}
+              className="form-input col-12 col-md-9"
+            ></textarea>
           </label>
         </div>
         <button className="btn col-12 col-md-3" type="submit">

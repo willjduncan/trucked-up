@@ -134,7 +134,8 @@ header h1 {
   background-color: rgb(46, 64, 87, 0.5);
 }
 #addJobForm input,
-#addJobForm textarea {
+#addJobForm textarea,
+#addJobForm select {
   border: 1px solid var(--secondary-color);
   display: block;
   padding: 6px 15px;
@@ -265,8 +266,8 @@ header h1 {
 
 #confirm-complete-btn {
   margin: 10vh;
-  height: 10vh;
-  width: 50vh;
+  height: 5em;
+  width: 15%;
 }
 
 /* CLIENT ADDITION */

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import editAssignmentHandler from "./"
 
 const JobList = ({ projects }) => {
-  if (!projects.length) {
+  if (projects.length === 0) {
     return (
       <tbody>
         <tr>
@@ -13,6 +13,7 @@ const JobList = ({ projects }) => {
       </tbody>
     );
   }
+  
   return (
     <tbody>
       {/* <h3 style={{ margin: "30px", textAlign: "center" }}>Here all projects</h3> */}
