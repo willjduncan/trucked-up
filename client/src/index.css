@@ -344,6 +344,7 @@ header h1 {
   text-align: center;
 }
 
+<<<<<<< HEAD
 /* LOGIN AND SIGNUP STYLE */
 .login-title {
   color: var(--fourth-color);
@@ -381,3 +382,5 @@ header h1 {
     width: 40%;
   }
 }
+=======
+>>>>>>> 969e1621 (added drivers list to page)
