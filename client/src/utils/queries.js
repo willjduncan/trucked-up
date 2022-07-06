@@ -88,23 +88,23 @@ export const QUERY_USERS = gql`
       # CHECK if need more user data!
       # email
       # password
-                        # position
-      # projects {
+      position
+      projects {
         #   _id
-                        #  jobName
+        jobName
         #   description
         #   driver: [User]
         #   startTime
         #   pickUpAddress
         #   deliveryAddress
         #   createdAt
-                        # client {
-                        #   # _id
-                        #   name
-                            # }
-                            # completed
-                            # confirmed
-      # }
+        client {
+          # _id
+          name
+        }
+        completed
+        confirmed
+      }
     }
   }
 `;

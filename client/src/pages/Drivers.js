@@ -75,14 +75,13 @@ const Drivers = () => {
                                 //     }
                                 //     }
                                 // };
-                                if (data) {
-                                    console.log(data);
 
-                                } else {
-                                    console.log(loading);
-                                    console.log(data);
+                                
+                                const drivers = data || [];
+                                if (drivers) {
+                                    console.log(drivers.getUsers);
 
-                                }
+                                } 
   return (
     <main>
                 {/* <div id="table-container">
