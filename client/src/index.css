@@ -395,7 +395,7 @@ header h1 {
 .login-title {
   color: var(--fourth-color);
   width: 100%;
-  font-size: 1.9rem;
+  font-size: 1.9rem; 
   margin: 40px 0;
   text-align: center;
 }
