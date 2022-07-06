@@ -409,6 +409,38 @@ header h1 {
   background: rgba(255, 255, 255, 0.75);
 }
 
+/* LOGIN AND SIGNUP STYLE */
+.login-title {
+  color: var(--fourth-color);
+  width: 100%;
+  font-size: 1.9rem;
+  margin: 40px 0;
+  /* margin-left: 5%; */
+  text-align: center;
+}
+.login-form{
+  align-self: center;
+  width: 70%;
+  color: var(--primary-color);
+  padding: 15px 20px;
+  margin: 0 auto 60px auto;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  background-color: rgb(46, 64, 87, 0.5);
+}
+.login-form input, .login-form select {
+  border: 1px solid var(--secondary-color);
+  display: block;
+  padding: 6px 15px;
+  font-size: 16px;
+  color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
 @media screen and (max-width: 575px) {
   .button {
     width: 40%;
