@@ -86,11 +86,13 @@ While this project's repository is available on Github, the site it deployed to 
 
 Once the project is cloned and the dependencies downloaded, type "npm start" to run the program. 
 
-Screenshots of the program in action is shown below, at the dispatcher's dashboard and the driver's dashboard
+Screenshots of the program in action is shown below, at the dispatcher's dashboard with the newly-written job and the driver's dashboard whose job it was assigned to, and the dispatcher's dashboard again, showing the button on the driver side has been pressed confirmed the job. 
 
-![screenshot of Active Site, Dispatcher Dashboard](./public/images/screenshot-dis-dash.png)
+![screenshot of Active Site, Dispatcher Dashboard](./client/public/screenshots/screenshot-dis-dash1.png)
 
-![screenshot of Active Site, Driver Dashboard](./public/images/screenshot-driv-dash.png)
+![screenshot of Active Site, Driver Dashboard](./client/public/screenshots/screenshot-dri-dash.png)
+
+![screenshot of Active Site, Driver Dashboard Confirmed](./client/public/screenshots/screenshot-dis-dash2.png)
 
 
 Screenshots of a successful add-project and login are shown to demonstrate the functionality through GraphQL 
@@ -112,7 +114,7 @@ If you make changes, test it locally on a branch before pushing to main. Clone f
 
 ## Additions
 
-First, refactoring is always welcome. It would be great to turn this project into a PWA so that drivers can update the completion of jobs with ease from wherever they may be. Allowing the map to show routes, to include a home (or work) address, travel time, and tolls, would greatly improve the map's overall use to the driver. Dispatcher-side improvements include the ability to edit projects.
+First, refactoring is always welcome. It would be great to turn this project into a PWA so that drivers can update the completion of jobs with ease from wherever they may be. Allowing the map to show routes, to include a home (or work) address, travel time, and tolls, would greatly improve the map's overall use to the driver. Dispatcher-side improvements include the ability to edit projects and having a dropdown menu to choose amongst clients and drivers when adding jobs.
 
 
 ## Tests
@@ -128,11 +130,17 @@ The github repository to this project is below:
 [https://github.com/willjduncan/trucked-up.git](https://github.com/willjduncan/trucked-up.git)
 
 
-The application is deployed on Heroku. The site is below:
+The application is deployed on Heroku by Sergii, Matt, and Will. The site is below:
 
-[q](q)
+Matt's Site
+[https://truck-it-up.herokuapp.com/](https://truck-it-up.herokuapp.com/)
 
+Will's Site
 
+[https://peaceful-plains-64054.herokuapp.com/](https://peaceful-plains-64054.herokuapp.com/)
+
+Sergii's Site
+[https://young-journey-90966.herokuapp.com/](https://young-journey-90966.herokuapp.com/)
 
 For any additional questions, we can be reached at the following
 

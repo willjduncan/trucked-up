@@ -7,6 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -14,6 +15,7 @@ import NoMatch from "./pages/NoMatch";
 import AddJobForm from "./pages/AddJob";
 import CompletedDrives from "./pages/CompletedDrives";
 // import Profile from "./pages/Profile";
+import Drivers from "./pages/Drivers";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
@@ -53,6 +55,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/completed_drives" element={<CompletedDrives />} />
               {/* <Route path="/profile" element={<Profile />}> */}
+              <Route path="/drivers" element={<Drivers />} />
               <Route path="/project">
               <Route path=":jobName" element={<SingleJob />} />
               </Route>

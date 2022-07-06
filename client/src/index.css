@@ -1,10 +1,11 @@
 /* VARIABLES */
 :root {
   --primary-color: #141414;
-  --secondary-color: #f55f14;
-  --tertiary-color: #f9f9f9;
+  --secondary-color: #f55f14c9;
+  /* --tertiary-color: #f9f9f9; */
+  --tertiary-color: aliceblue;
   --fourth-color: #727d71;
-  --fifth-color: #778da9;
+  --fifth-color: #187fce;
 }
 /* UNIVERSAL SELECTOR */
 * {
@@ -133,7 +134,8 @@ header h1 {
   background-color: rgb(46, 64, 87, 0.5);
 }
 #addJobForm input,
-#addJobForm textarea {
+#addJobForm textarea,
+#addJobForm select {
   border: 1px solid var(--secondary-color);
   display: block;
   padding: 6px 15px;
@@ -216,14 +218,24 @@ header h1 {
 }
 
 /* JobList */
+.table-name {
+  margin: 30px;
+  text-align: center;
+}
+
 #table-container {
   margin: 3vh;
+}
+
+.status-cell {
+  width: 12%;
 }
 
 #job-list {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed;
 }
 
 #job-list td,
@@ -244,7 +256,7 @@ header h1 {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04aa6d;
+  background-color: var(--secondary-color);
   color: white;
 }
 
@@ -254,8 +266,8 @@ header h1 {
 
 #confirm-complete-btn {
   margin: 10vh;
-  height: 10vh;
-  width: 50vh;
+  height: 5em;
+  width: 15%;
 }
 
 /* CLIENT ADDITION */
@@ -331,4 +343,42 @@ header h1 {
   color: rgb(255, 255, 255);
   opacity: 1; /* Firefox */
   text-align: center;
+}
+
+/* LOGIN AND SIGNUP STYLE */
+.login-title {
+  color: var(--fourth-color);
+  width: 100%;
+  font-size: 1.9rem;
+  margin: 40px 0;
+  /* margin-left: 5%; */
+  text-align: center;
+}
+.login-form{
+  align-self: center;
+  width: 70%;
+  color: var(--primary-color);
+  padding: 15px 20px;
+  margin: 0 auto 60px auto;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  background-color: rgb(46, 64, 87, 0.5);
+}
+.login-form input, .login-form select {
+  border: 1px solid var(--secondary-color);
+  display: block;
+  padding: 6px 15px;
+  font-size: 16px;
+  color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (max-width: 575px) {
+  .button {
+    width: 40%;
+  }
 }

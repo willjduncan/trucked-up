@@ -39,6 +39,7 @@ const Dashboard = () => {
   const { loading, data } = useQuery(req);
   const projects = data?.getProjects || [];
   const project = data?.me?.projects || [];
+  console.log(projects);
 
   // change status of the top job in array of driver's jobs
   const buttonHandler = async () => {
@@ -81,6 +82,7 @@ const Dashboard = () => {
     <main>
       {/* <DriverMap /> */}
       {/* <div className="flex-row justify-space-between"> */}
+      <h2 className="table-name">Here all projects</h2>
       <div
         id="table-container"
         // className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}
@@ -88,7 +90,7 @@ const Dashboard = () => {
         <table id="job-list">
           <thead>
             <tr>
-              <th>Status</th>
+              <th className="status-cell">Status</th>
               <th>Client name</th>
               <th>Project name</th>
               <th>Start Time</th>
@@ -135,11 +137,7 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
-        {userdata() === "driver" ? (
-        <DriverMap project={project} />
-        ) : (
-          <> </>
-        )}
+        {userdata() === "driver" ? <DriverMap project={project} /> : <> </>}
       </div>
       {/* </div> */}
     </main>
