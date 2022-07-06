@@ -81,6 +81,7 @@ const Dashboard = () => {
     <main>
       {/* <DriverMap /> */}
       {/* <div className="flex-row justify-space-between"> */}
+      <h2 className="table-name">Here all projects</h2>
       <div
         id="table-container"
         // className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}
@@ -88,7 +89,7 @@ const Dashboard = () => {
         <table id="job-list">
           <thead>
             <tr>
-              <th>Status</th>
+              <th className="status-cell">Status</th>
               <th>Client name</th>
               <th>Project name</th>
               <th>Start Time</th>
@@ -135,11 +136,7 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
-        {userdata() === "driver" ? (
-        <DriverMap project={project} />
-        ) : (
-          <> </>
-        )}
+        {userdata() === "driver" ? <DriverMap project={project} /> : <> </>}
       </div>
       {/* </div> */}
     </main>

@@ -86,7 +86,7 @@ export const QUERY_USERS = gql`
       _id
       username
       # CHECK if need more user data!
-      # email
+      email
       # password
       position
       projects {
@@ -98,10 +98,10 @@ export const QUERY_USERS = gql`
         #   pickUpAddress
         #   deliveryAddress
         #   createdAt
-        client {
-          # _id
-          name
-        }
+        # client {
+        #   # _id
+        #   name
+        # }
         completed
         confirmed
       }

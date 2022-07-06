@@ -4,47 +4,58 @@ import { Link } from "react-router-dom";
 // import editAssignmentHandler from "./"
 
 const DriversList = ({ drivers }) => {
-  if (!drivers.length) {
-    return <tbody><tr><td>No drivers Yet</td></tr></tbody>;
+  if (drivers.length === 0) {
+    return (
+      <tbody>
+        <tr>
+          <td>No drivers Yet</td>
+        </tr>
+      </tbody>
+    );
   }
+
   return (
     <tbody>
-      {/* <h3 style={{ margin: "30px", textAlign: "center" }}>Here all drivers</h3> */}
+      {/* render each driver from array */}
+      {drivers.map((driver) => (
+        <tr key={driver._id}>
+          {/* check confirm and complete to color an icon of td */}
 
-      {drivers &&
-        drivers.map((driver) => (
-          <tr key={driver._id}>
-            {/* check confirm and complete to color an icon of td */}
-            {( driver.confirmed && driver.completed ) ? (
-              <td style={{ backgroundColor: "green" }}>completed</td>
-            ) : (driver.confirmed && !driver.completed) ? (
-              <td style={{ backgroundColor: "blue" }}>confirmed</td>
-            ) : (
-              <td style={{ backgroundColor: "white" }}>waiting for responce</td>
-            )}
-            <td>
-              <h4>{driver.client?.name}</h4>
+          {/* driver has NO projects: arr.length === 0 */}
+          {driver.projects?.length === 0 || !driver.projects ? (
+            <td style={{ backgroundColor: "var(--tertiary-color)" }}>
+              NO projects
             </td>
-            <td>
-              <h4>{driver.jobName}</h4>
+          ) : // driver has project but not confirmed it
+          driver.projects?.filter(
+              (project) => !project.confirmed && !project.completed
+            ) ? (
+            <td style={{ backgroundColor: "var(--fourth-color)" }}>
+              NOT CONFIRMED the project
             </td>
-            <td>
-              <h4>{driver.startTime}</h4>
-            </td>
-            <td>
-              <h4>{driver.driver.map((driverr) => [driverr.username])}</h4>
-            </td>
-            <td>
-              <h4>{driver.pickUpAddress}</h4>
-            </td>
-            <td>
-              <h4>{driver.deliveryAddress}</h4>
-            </td>
-            <td>
-              <h4>{driver.description}</h4>
-            </td>
-          </tr>
-        ))}
+          ) : // driver confirmed the project
+          driver.projects?.filter(
+              (project) => project.confirmed && !project.completed
+            ) ? (
+            <td style={{ backgroundColor: "#187fce" }}>CONFIRMED</td>
+          ) : //driver completed project
+          driver.projects?.filter(
+              (project) => project.confirmed && project.completed
+            ) ? (
+            <td style={{ backgroundColor: "#3ba552" }}>COMPLETED</td>
+          ) : (
+            <>
+              <td>no data</td>
+            </>
+          )}
+          <td>
+            <h4>{driver.username}</h4>
+          </td>
+          <td>
+            <h4>{driver.email}</h4>
+          </td>
+        </tr>
+      ))}
     </tbody>
   );
 };
