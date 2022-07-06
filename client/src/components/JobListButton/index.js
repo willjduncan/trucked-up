@@ -76,11 +76,9 @@ const JobList = ({ projects }) => {
 //         }
 //       };
 
-
-//   console.log(projects);
-//   if (!projects.length) {
-//     return <h3>No projects Yet</h3>;
-//   }
+  if (!projects.length) {
+    return <h3>No projects Yet</h3>;
+  }
 
   return (
     <div>

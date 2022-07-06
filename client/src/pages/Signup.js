@@ -41,9 +41,9 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
         <div className="card">
-          <h4 className="card-header">Sign Up</h4>
+          <h4 className="login-title">Sign Up</h4>
           <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+            <form className='login-form' onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
                 placeholder="Your username"
@@ -91,7 +91,7 @@ const Signup = () => {
                 value={formState.confirmPassword}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button className="button d-block w-100" type="submit">
                 Submit
               </button>
             </form>

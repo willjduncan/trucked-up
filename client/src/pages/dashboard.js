@@ -6,7 +6,7 @@ import { QUERY_ME } from "../utils/queries";
 import { useMutation } from "@apollo/client";
 import { EDIT_COMPLETE, EDIT_CONFIRM } from "../utils/mutations";
 import Auth from "../utils/auth";
-// import DriverMap from "../components/DriverMap";
+import DriverMap from "../components/DriverMap";
 // import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
@@ -135,6 +135,11 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
+        {userdata() === "driver" ? (
+        <DriverMap project={project} />
+        ) : (
+          <> </>
+        )}
       </div>
       {/* </div> */}
     </main>

@@ -32,7 +32,7 @@ const JobList = ({ projects }) => {
               <h4>{project.startTime}</h4>
             </td>
             <td>
-              <h4>{project.driver.map((driverr) => [driverr.username])}</h4>
+              {/* <h4>{project.driver.map((driverr) => [driverr.username])}</h4> */}
             </td>
             <td>
               <h4>{project.pickUpAddress}</h4>

@@ -9,11 +9,11 @@ const { validateProjectAddition } = require("../../utils/validators");
 module.exports = {
   Query: {
     getProjects: async (parent, args, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("Errors", {
-          errors: { auth: "Not an authorized user." },
-        });
-      }
+      // if (!context.user) {
+      //   throw new AuthenticationError("Errors", {
+      //     errors: { auth: "Not an authorized user." },
+      //   });
+      // }
 
       const projects = await Project.find()
         .populate("driver")
@@ -128,11 +128,11 @@ module.exports = {
       return project;
     },
     deleteProject: async (parent, { jobName }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("Errors", {
-          errors: { auth: "Not an authorized user." },
-        });
-      }
+      // if (!context.user) {
+      //   throw new AuthenticationError("Errors", {
+      //     errors: { auth: "Not an authorized user." },
+      //   });
+      // }
       const project = await Project.deleteOne({ jobName });
       return project;
     },

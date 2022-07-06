@@ -20,6 +20,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
 import SingleJob from "./pages/SingleJob";
+import AddClient from "./pages/AddClient";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -59,6 +60,7 @@ function App() {
               <Route path=":jobName" element={<SingleJob />} />
               </Route>
               <Route path="/add" element={<AddJobForm />} />
+              <Route path="/add-client" element={<AddClient />} />
               <Route path="*" element={<NoMatch />} /> */
             </Routes>
           </div>

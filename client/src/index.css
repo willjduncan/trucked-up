@@ -73,6 +73,11 @@ header h1 {
   margin: 0 14px;
 }
 
+.flex-row {
+  display: flex;
+  align-items: baseline;
+}
+
 /* HOME STYLES */
 .home-cont {
   background-image: url("../public/images/home-img.jpg");
@@ -162,67 +167,10 @@ header h1 {
   background: var(--tertiary-color);
 }
 
-#addJobForm {
-  align-self: center;
-  color: var(--primary-color);
-  padding: 15px 20px;
-  margin: 0 auto 0 auto;
-  border: 1px solid var(--secondary-color);
-  border-radius: 10px;
-  background-color: rgb(46, 64, 87, 0.5);
-}
-#addJobForm input,
-#addJobForm textarea {
-  border: 1px solid var(--secondary-color);
-  display: block;
-  padding: 6px 15px;
-  font-size: 16px;
-  color: var(--secondary-color);
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.75);
-}
-#addJobForm input:focus,
-.addJobForm textarea:focus {
-  background-color: rgba(255, 255, 255, 1);
-  outline: none;
-}
-#addJobForm button {
-  width: 20%;
-  border: none;
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  text-align: center;
-  margin-top: 10px;
-  padding: 15px 0;
-  font-size: 16px;
-  border-radius: 10px;
-}
-#addJobForm button:hover {
-  color: var(--secondary-color);
-  background: var(--tertiary-color);
-}
-
 /* MAP STYLES */
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-}
-#instructions {
-  position: absolute;
-  margin: 20px;
-  width: 20%;
-  top: 0;
-  bottom: 20%;
-  height: 250px;
-  padding: 20px;
-  background-color: #fff;
-  overflow-y: scroll;
-  font-family: sans-serif;
+.mapboxgl-map {
+  margin: 0 auto 10px auto;
+  
 }
 
 .button {
@@ -251,8 +199,9 @@ header h1 {
   display: flex;
   align-items: center;
   width: 750px;
-  margin-left: 20px;
+  margin: 7px auto;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .add {
   margin: 5px;
@@ -278,24 +227,29 @@ header h1 {
   width: 100%;
 }
 
-#job-list td, #job-list th {
+#job-list td,
+#job-list th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#job-list tr:nth-child(even){background-color: #f2f2f2;}
+#job-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#job-list tr:hover {background-color: #ddd;}
+#job-list tr:hover {
+  background-color: #ddd;
+}
 
 #job-list th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: var(--secondary-color);
+  background-color: #04aa6d;
   color: white;
 }
 
-#table-container  {
+#table-container {
   text-align: center;
 }
 
@@ -303,4 +257,79 @@ header h1 {
   margin: 10vh;
   height: 10vh;
   width: 50vh;
+}
+
+/* CLIENT ADDITION */
+
+.clientContain {
+  height: calc(100vh - 135px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clientForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clientInput {
+  width: 100%;
+  background-color: #5a5a5a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clientInput:hover {
+  transform: scale(1.05);
+}
+
+.clientSubmit {
+  
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #000000;
+  border-color: #000000;
+}
+
+.clientSubmit:hover {
+  background-color: #00a118;
+  border-color: #036e4a;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+  text-align: center;
 }
