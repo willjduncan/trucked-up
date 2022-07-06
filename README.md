@@ -130,22 +130,13 @@ The github repository to this project is below:
 [https://github.com/willjduncan/trucked-up.git](https://github.com/willjduncan/trucked-up.git)
 
 
-<<<<<<< HEAD
 The application is deployed on Heroku by Sergii, Matt, and Will. The site is below:
-=======
-The application is deployed on Heroku. The site is below:
-
-[https://truck-it-up.herokuapp.com/](https://truck-it-up.herokuapp.com/)
->>>>>>> 1b1e70de (fix double path)
-
 
 Matt's Site
 [https://truck-it-up.herokuapp.com/](https://truck-it-up.herokuapp.com/)
 
-
 Will's Site
 [https://peaceful-plains-64054.herokuapp.com/](https://peaceful-plains-64054.herokuapp.com/)
-
 
 Sergii's Site
 [https://young-journey-90966.herokuapp.com/](https://young-journey-90966.herokuapp.com/)
