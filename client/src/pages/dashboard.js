@@ -81,7 +81,7 @@ const Dashboard = () => {
     <main>
       {/* <DriverMap /> */}
       {/* <div className="flex-row justify-space-between"> */}
-      <h2 className="table-name">Here all projects</h2>
+      <h2 className="table-name">Here are all your projects</h2>
       <div
         id="table-container"
         // className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}
