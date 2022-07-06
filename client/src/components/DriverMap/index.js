@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Map, { Marker, Source, Layer } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import mapboxgl from '!mapbox-gl';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import mapboxgl from 'mapbox-gl';
