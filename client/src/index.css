@@ -359,7 +359,6 @@ header h1 {
   opacity: 1; /* Firefox */
   text-align: center;
 }
-
 /* LOGIN AND SIGNUP STYLE */
 .login-title {
   color: var(--fourth-color);
