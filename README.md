@@ -114,7 +114,7 @@ If you make changes, test it locally on a branch before pushing to main. Clone f
 
 ## Additions
 
-First, refactoring is always welcome. It would be great to turn this project into a PWA so that drivers can update the completion of jobs with ease from wherever they may be. Allowing the map to show routes, to include a home (or work) address, travel time, and tolls, would greatly improve the map's overall use to the driver. Dispatcher-side improvements include the ability to edit projects.
+First, refactoring is always welcome. It would be great to turn this project into a PWA so that drivers can update the completion of jobs with ease from wherever they may be. Allowing the map to show routes, to include a home (or work) address, travel time, and tolls, would greatly improve the map's overall use to the driver. Dispatcher-side improvements include the ability to edit projects and having a dropdown menu to choose amongst clients and drivers when adding jobs.
 
 
 ## Tests
@@ -139,7 +139,8 @@ Will's Site
 
 [https://peaceful-plains-64054.herokuapp.com/](https://peaceful-plains-64054.herokuapp.com/)
 
-
+Sergii's Site
+[https://young-journey-90966.herokuapp.com/](https://young-journey-90966.herokuapp.com/)
 
 For any additional questions, we can be reached at the following
 
