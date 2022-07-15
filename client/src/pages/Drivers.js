@@ -24,11 +24,7 @@ const Drivers = () => {
     <main>
       <div id="table-container">
         <h2 className="table-name">
-<<<<<<< HEAD
           Here are all of your drivers
-=======
-          Here all drivers
->>>>>>> 4cbe229c (added drivers list to page)
         </h2>
         <table id="job-list">
           <thead>

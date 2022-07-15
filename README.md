@@ -103,10 +103,29 @@ The github repository to this project is below:
 
 The application is deployed on Heroku by Sergii, Matt, and Will. The site is below:
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+Matt's Site
+=======
+<<<<<<< HEAD
+>>>>>>> 4892cd07 (rebase)
+[https://truck-it-up.herokuapp.com/](https://truck-it-up.herokuapp.com/)
+=======
+>>>>>>> 981b1351 (re-rebase css)
+>>>>>>> d8a9d5a4 (re-rebase css)
 Matt's Site
 [https://truck-it-up.herokuapp.com/](https://truck-it-up.herokuapp.com/)
 
 Will's Site
+[https://peaceful-plains-64054.herokuapp.com/](https://peaceful-plains-64054.herokuapp.com/)
+>>>>>>> 3b6bd511 (add screenshot to README)
+
+Will's Site
+
 [https://peaceful-plains-64054.herokuapp.com/](https://peaceful-plains-64054.herokuapp.com/)
 
 Sergii's Site
