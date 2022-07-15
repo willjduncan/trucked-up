@@ -53,7 +53,7 @@ const AddClient = () => {
           onChange={handleChange}
         />
         <div>
-          <button className="clientSubmit" type="submit">Submit</button>
+          <button className="button clientSubmit" type="submit">Submit</button>
         </div>
       </form>
       {Object.keys(errors).length > 0 && (

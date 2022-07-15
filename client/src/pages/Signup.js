@@ -95,9 +95,9 @@ const Signup = () => {
                 Submit
               </button>
             </form>
-            {error && <div>Sign up failed</div>}
+            {error && <div className="error-text">Sign up failed</div>}
             {Object.keys(errors).length > 0 && (
-              <div className="h-75px text-[#991111] text-xl mt-8 text-center">
+              <div className="error-text">
                 <ul className="">
                   {Object.values(errors).map((value) => (
                     <li key={value}>{value}</li>

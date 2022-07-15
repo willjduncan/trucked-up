@@ -30,7 +30,7 @@ const Header = () => {
                 <Link className="navlinks" to="/add">
                   Add Job
                 </Link>
-                <Link to="/add-client">New Client</Link>
+                <Link className="navlinks" to="/add-client">New Client</Link>
               </>
             ) : (
               <>
@@ -42,7 +42,7 @@ const Header = () => {
             <Link className="navlinks" to="/dashboard">
               Dashboard
             </Link>
-            <a href="/" onClick={logout}>
+            <a className="navlinks" href="/" onClick={logout}>
               Logout
             </a>
           </>

@@ -67,9 +67,9 @@ const Login = (props) => {
                 Submit
               </button>
             </form>
-            {error && <div>Login failed</div>}
+            {error && <div className="error-text">Login failed</div>}
             {Object.keys(errors).length > 0 && (
-              <div className="h-75px text-[#991111] text-xl mt-8 text-center">
+              <div className="error-text">
                 <ul className="">
                   {Object.values(errors).map((value) => (
                     <li key={value}>{value}</li>

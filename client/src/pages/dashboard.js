@@ -59,7 +59,6 @@ const Dashboard = () => {
           variables: { _id: projectToDo[0]._id },
         });
         if (data) {
-          console.log(data);
           // !!!!!!! change to "none"
           displayBtn = "";
         }

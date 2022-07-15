@@ -18,28 +18,6 @@ const AddJobForm = () => {
   const { loading, data } = useQuery(QUERY_USERS);
 
   const users = data?.getUsers || [];
-  console.log(users);
-  // , {
-  //   update(cache, { data: { addJob } }) {
-  // try {
-  //   // update me array's cache
-  //   const { me } = cache.readQuery({ query: QUERY_ME });
-  //   cache.writeQuery({
-  //     query: QUERY_ME,
-  //     data: { me: { ...me, jobs: [...me.jobs, addJob] } },
-  //   });
-  // } catch (e) {
-  //   console.warn("First job insertion by user!");
-  // }
-
-  // update job array's cache
-  // const { jobs } = cache.readQuery({ query: QUERY_CLIENT });
-  // cache.writeQuery({
-  //   query: QUERY_CLIENT,
-  //   data: { jobs: [addJob, ...jobs] },
-  // });
-  //   },
-  // });
   const [errors, setErrors] = useState({});
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -50,10 +28,7 @@ const AddJobForm = () => {
   const handleClientChange = (event) => {
     setClient(event.target.value);
   };
-  console.log(driverEmail);
   const handleEmailChange = (event) => {
-    console.log(driverEmail);
-    console.log(event);
     setEmail(event.target.value);
   };
   const handlePickupChange = (event) => {
@@ -66,7 +41,7 @@ const AddJobForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      // add thought to database
+      // add job to database
       const response = await addJob({
         variables: {
           jobName,
@@ -82,17 +57,21 @@ const AddJobForm = () => {
         setErrors(response.errors[0].extensions.errors);
         console.table(response.errors[0]);
       }
-      // clear form value
-      setName("");
-      setEmail("");
-      setDescription("");
-      setDeliver("");
-      setPickup("");
-      setClient("");
+      clearForm()
+      window.location.replace("/")
     } catch (e) {
       console.error(e);
     }
   };
+
+  function clearForm() {
+    setName("");
+    setEmail("");
+    setDescription("");
+    setDeliver("");
+    setPickup("");
+    setClient("");
+  }
 
   return (
     <div>
@@ -204,7 +183,7 @@ const AddJobForm = () => {
             ></textarea>
           </label>
         </div>
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn button" type="submit">
           Submit
         </button>
       </form>
