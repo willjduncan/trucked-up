@@ -26,9 +26,9 @@ background: linear-gradient(28deg, rgba(240,248,255,1) 10%, rgba(119,141,169,1) 
   position: relative;
   min-height: 100vh;
 }
-/* main {
+main {
   padding-bottom: 2.5rem;
-} */
+}
 
 /* HEADER STYLES START */
 header {

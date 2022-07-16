@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
+  // useEffect(() => {
+  //   console.log(location);
+  // }, [location]);
 
   React.useEffect(() => {
     var element = document.getElementById("footer");
