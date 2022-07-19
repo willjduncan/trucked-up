@@ -222,27 +222,13 @@ export const QUERY_PROJECTS = gql`
 
 export const QUERY_PROJECT = gql`
   query getProject($jobName: String!) {
-    getProject {
+    getProject(jobName: $jobName) {
       _id
       jobName
       description
       driver {
         _id
         username
-        # email
-        # password
-        # position
-        # projects {
-        #   _id
-        #   jobName
-        #   description
-        #   driver: {[User]}
-        #   startTime
-        #   pickUpAddress
-        #   deliveryAddress
-        #   createdAt
-        #   client: {Client}
-        # }
       }
       startTime
       pickUpAddress
@@ -251,7 +237,6 @@ export const QUERY_PROJECT = gql`
       client {
         _id
         name
-        # projects {}
       }
     }
   }

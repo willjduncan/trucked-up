@@ -57,7 +57,7 @@ const DriverMap = ({ project }) => {
 
   //   fetch coordinates of pickup address and save them to a variable
   async function fetchData1() {
-    let pick = project[0].pickUpAddress;
+    let pick = project.pickUpAddress;
     let coordinatesUrl = `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${pick}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
@@ -70,7 +70,7 @@ const DriverMap = ({ project }) => {
 
   //   fetch coordinates of pickup address and save them to a variable
   async function fetchData2() {
-    let drop = project[0].deliveryAddress;
+    let drop = project.deliveryAddress;
     let coordinatesUrl = `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${drop}&apiKey=${process.env.REACT_APP_COORD_API_KEY}`;
     const response = await fetch(coordinatesUrl);
     const data = await response.json();
@@ -89,17 +89,17 @@ const DriverMap = ({ project }) => {
           <div className="add">
             {" "}
             Pickup (in green):{" "}
-            <span id="pickup">{project[0].pickUpAddress}</span>
+            <span id="pickup">{project.pickUpAddress}</span>
           </div>
-          <CopyToClipboard text={project[0].pickUpAddress}>
+          <CopyToClipboard text={project.pickUpAddress}>
             <button className="button">Copy to clipboard</button>
           </CopyToClipboard>
           <div className="add">
             {" "}
             Deliver To (in blue):{" "}
-            <span id="deliver">{project[0].deliveryAddress}</span>
+            <span id="deliver">{project.deliveryAddress}</span>
           </div>
-          <CopyToClipboard text={project[0].deliveryAddress}>
+          <CopyToClipboard text={project.deliveryAddress}>
             <button className="button">Copy to clipboard</button>
           </CopyToClipboard>
         </div>

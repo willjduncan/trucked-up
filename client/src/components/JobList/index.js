@@ -39,25 +39,25 @@ const JobList = ({ projects }) => {
               )
             }
             <td>
-              <h4>{project.client?.name}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.client?.name}</h4> </Link>
             </td>
             <td>
-              <h4>{project.jobName}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.jobName}</h4> </Link>
             </td>
             <td>
-              <h4>{project.startTime}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.startTime}</h4> </Link>
             </td>
             <td>
-              <h4>{project.driver.map((driver) => [driver.username])}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.driver.map((driver) => [driver.username])}</h4> </Link>
             </td>
             <td>
-              <h4>{project.pickUpAddress}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"> <h4>{project.pickUpAddress}</h4> </Link>
             </td>
             <td>
-              <h4>{project.deliveryAddress}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.deliveryAddress}</h4> </Link>
             </td>
             <td>
-              <h4>{project.description}</h4>
+            <Link to={`/project/${project.jobName}`} className="sing-job-link"><h4>{project.description}</h4> </Link>
             </td>
           </tr>
         ))}

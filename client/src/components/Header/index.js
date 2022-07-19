@@ -34,9 +34,9 @@ const Header = () => {
               </>
             ) : (
               <>
-                {/* <Link className="navlinks" to="/completed_drives">
+                <Link className="navlinks" to="/completed_drives">
                   Completed Drives
-                </Link> */}
+                </Link>
               </>
             )}
             <Link className="navlinks" to="/dashboard">

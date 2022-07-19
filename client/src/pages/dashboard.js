@@ -7,7 +7,6 @@ import { useMutation } from "@apollo/client";
 import { EDIT_COMPLETE, EDIT_CONFIRM } from "../utils/mutations";
 import Auth from "../utils/auth";
 import DriverMap from "../components/DriverMap";
-// import JobForm from "../components/ThoughtForm";
 
 const Dashboard = () => {
   const [editConfirm] = useMutation(EDIT_CONFIRM, {
@@ -135,7 +134,7 @@ const Dashboard = () => {
         >
           CHANGE JOB STATUS
         </button>
-        {userdata() === "driver" ? <DriverMap project={project} /> : <> </>}
+        {/* {userdata() === "driver" ? <DriverMap project={project} /> : <> </>} */}
       </div>
       {/* </div> */}
     </main>
