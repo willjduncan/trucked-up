@@ -465,6 +465,20 @@ header h1 {
   text-decoration: inherit;
 }
 
+/* SINGLE JOB STYLEs */
+.single-container {
+  text-align: center;
+}
+.job-name {
+  margin: 2rem 0 .5rem 0;
+}
+.single-container h4 {
+  line-height: 1.5;
+}
+
+
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 575px) {
   .button {
     width: 40%;

@@ -234,6 +234,8 @@ export const QUERY_PROJECT = gql`
       pickUpAddress
       deliveryAddress
       createdAt
+      completed
+      confirmed
       client {
         _id
         name
