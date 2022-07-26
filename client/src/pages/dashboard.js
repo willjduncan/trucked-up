@@ -6,7 +6,6 @@ import { QUERY_ME } from "../utils/queries";
 import { useMutation } from "@apollo/client";
 import { EDIT_COMPLETE, EDIT_CONFIRM } from "../utils/mutations";
 import Auth from "../utils/auth";
-import DriverMap from "../components/DriverMap";
 
 const Dashboard = () => {
   const [editConfirm] = useMutation(EDIT_CONFIRM, {
