@@ -21,10 +21,15 @@ const SingleJob = (props) => {
   return (
     <main>
       <div className="single-container">
+      {project.completed === true ? (
+           <h2 id="completed-alert">Job Completed</h2>
+          ):(
+            <></>
+          )}
           <h2 className="job-name">{project.jobName}</h2>
           <h4>{project.description}</h4>
           {project.completed === true ? (
-           <> </>
+           <></>
           ):(
             <JobListButton project={project}></JobListButton>
           )}

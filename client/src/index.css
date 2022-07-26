@@ -280,7 +280,7 @@ header h1 {
 }
 
 #confirm-complete-btn {
-  margin: 10vh;
+  margin: 6vh;
   height: 5em;
   width: 15%;
 }
@@ -474,8 +474,20 @@ header h1 {
 }
 .single-container h4 {
   line-height: 1.5;
+  font-size: 20px;
+  font-weight: normal;
 }
-
+#completed-alert {
+  color: var(--tertiary-color);
+  font-weight: 800;
+  font-size: 30px;
+  text-decoration: underline;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+#update {
+  padding: 10px;
+}
 
 
 /* MEDIA QUERIES */

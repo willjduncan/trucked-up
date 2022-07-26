@@ -129,6 +129,7 @@ const Dashboard = () => {
 
         <button
           id="confirm-complete-btn"
+          className="button"
           style={{ display: displayBtn }}
           onClick={buttonHandler}
         >
