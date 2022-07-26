@@ -1,5 +1,5 @@
 # trucked-up
-Trucking app for creating and delegating jobs by Dispatchers to various truckers
+Trucking app for creating and delegating jobs by dispatchers to various truckers
 
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
@@ -36,40 +36,11 @@ SO THAT I can plan my next trip.
 
 Truck It Up is an app for trucking companies made to better organize information and communication from client to dispatcher to driver. When dispatchers sign in, they can keep track of incomplete jobs, confirmed jobs, completed jobs, and clients. They can also create jobs, and assign them to drivers. Drivers can sign on and accept the job and the confirm completion of the task. They can also view a map of the addresses. 
 
-Completed, the program should operate such that:
-
-WHEN I go to the repository
-
-THEN I find that it meets quality coding standards and has a high-quality README
-
-WHEN I look at the files on GitHub, 
-
-THEN I see that React was used on the front end, GraphQL, Node.js, Express.js make up the server, and MongoDB and the Mongoose ODM were used for the database. 
-
-WHEN I visit the website for the first time,
-
-THEN I see that it is deployed to Heroku 
-
-WHEN I click on the site, 
-
-THEN I find that it is responsive and interactive (i.e., accept and respond to user input) with a polished UI.
-
-WHEN I look at how the map the handles data,
-
-THEN I see that authentication is used and sensitive API key information is protected.
-
-WHEN I interact with elements,
-
-THEN I can do things such as retrieving, adding, updating, and deleting data.
-
 Work was divided in the following ways:
 
 Matt: backend, models, schema
-Will: wireframe, home page, addJob page, maps
+Will: wireframe, home page, addJob page, maps, singleJob page, jobListButton
 Sergii: login & signin, dispatcher and driver dashboards
-Rafael: client pages 
-
-The biggest challenges came from the front end, such as getting the map to work and managing to display queries and implement mutations. 
 
 
 
