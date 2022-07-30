@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { QUERY_PROJECTS } from "../utils/queries";
-// import editAssignmentHandler from "./"
 
 const JobList = ({ projects }) => {
   if (!projects.length) {

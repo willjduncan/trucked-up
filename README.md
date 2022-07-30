@@ -39,7 +39,7 @@ Truck It Up is an app for trucking companies made to better organize information
 Work was divided in the following ways:
 
 Matt: backend, models, schema
-Will: wireframe, home page, addJob page, maps, singleJob page, jobListButton
+Will: wireframe, home page, addJob page, maps, singleJob page, jobListButton, completedDrives
 Sergii: login & signin, dispatcher and driver dashboards
 
 
@@ -123,11 +123,6 @@ Github: [https://github.com/sergiionyx](https://github.com/sergiionyx)
 
 Will Duncan: willdunc12@gmail.com
 Github: [https://github.com/willjduncan](https://github.com/willjduncan)
-
-Rafael Dickerson: 
-
-
-
 
 
 

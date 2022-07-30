@@ -1,11 +1,7 @@
 import React from "react";
 import DriversList from "../components/Drivers";
-
 import { useQuery } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
-
-import { useMutation } from "@apollo/client";
-// import { EDIT_COMPLETE, EDIT_CONFIRM } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Drivers = () => {

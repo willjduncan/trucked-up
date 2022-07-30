@@ -12,7 +12,6 @@ const Signup = () => {
   });
   const [register, { error }] = useMutation(ADD_USER, { errorPolicy: "all" });
   const [errors, setErrors] = useState({});
-  //console.error(formState);
   // submit form (notice the async!)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
